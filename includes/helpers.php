@@ -1,4 +1,7 @@
 <?php
+
+	require_once('config.php');
+
 	// renders html template
 	function render($template, $data=[])
 	{
