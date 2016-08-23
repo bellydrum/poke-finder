@@ -71,11 +71,11 @@
 
 			// if user input exists, add to the statement
 			if($caughtStatus != "")
-				$statement += "caughtStatus = '{$caughtStatus}'";
+				$statement = $statement . "caughtStatus = '{$caughtStatus}' ";
 			if($type != "")
-				$statement += "type = '{$type}'";
+				$statement = $statement . "type = '{$type}' ";
 			if($genStart != "" && $genEnd != "")
-				$statement += "nationalDex >= {$genStart} AND nationalDex <= {$genEnd}";
+				$statement = $statement . "nationalDex >= {$genStart} AND nationalDex <= {$genEnd}";
 		}
 
 		// return the result; empty string if input is empty
