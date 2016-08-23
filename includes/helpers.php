@@ -2,6 +2,7 @@
 
 	require_once('config.php');
 
+
 	// renders html template
 	function render($template, $data=[])
 	{
@@ -19,44 +20,40 @@
 	{
 		$start = $end = 0;
 		
-		if($generation == '1')
+		switch($generation)
 		{
-			$start = 1;
-			$end = 151;
-		}
-		else if($generation == '2')
-		{
-			$start = 152;
-			$end = 251;
-		}
-		else if($generation == '3')
-		{
-			$start = 252;
-			$end = 386;
-		}
-		else if($generation == '4')
-		{
-			$start = 387;
-			$end = 493;
-		}
-		else if($generation == '5')
-		{
-			$start = 494;
-			$end = 649;
-		}
-		else if($generation == '6')
-		{
-			$start = 650;
-			$end = 721;
-		}
-		else // add gen 7 when alola dex is complete
-		{
-			$start = "";
-			$end = "";
+			case 1:
+				$start = 1;
+				$end = 151;
+				break;
+			case 2:
+				$start = 152;
+				$end = 251;
+				break;
+			case 3:
+				$start = 252;
+				$end = 386;
+				break;
+			case 4:
+				$start = 387;
+				$end = 493;
+				break;
+			case 5:
+				$start = 494;
+				$end = 649;
+				break;
+			case 6:
+				$start = 650;
+				$end = 721;
+				break;
+			default:
+				$start = "";
+				$end = "";
 		}
 
 		return array($start, $end);
 	}
+
 
 	// creates SQL statements from user input
 	function generateStatement($caughtStatus, $type, $genStart, $genEnd)
@@ -64,21 +61,45 @@
 		// initialize statement to an empty string
 		$statement = "";
 
-		// if user input exists, create beginning of statement
-		if(($caughtStatus == "" && $type == "" && $genStart == "" && $genEnd == "") == false)
-		{
-			$statement = "WHERE ";
 
-			// if user input exists, add to the statement
+		// if any user input exists, create beginning of statement
+		if(!($caughtStatus == "" && $type == "" && $genStart == "" && $genEnd == ""))
+		{
+			// start statement string
+			$statement = "WHERE ";
+			
+			// create array for pieces of the statement string
+			// will iterate through array and append to statement string at the end
+			$statementArray = array();
+
+			// if user input exists, add to the statement array
 			if($caughtStatus != "")
-				$statement = $statement . "caughtStatus = '{$caughtStatus}' ";
+			{
+				$caughtStatusStatement = "caughtStatus = '{$caughtStatus}'";
+				array_push($statementArray, $caughtStatusStatement);
+			}
 			if($type != "")
-				$statement = $statement . "type = '{$type}' ";
+			{
+				$typeStatement = "type = '{$type}'";
+				array_push($statementArray, $typeStatement);
+			}
 			if($genStart != "" && $genEnd != "")
-				$statement = $statement . "nationalDex >= {$genStart} AND nationalDex <= {$genEnd}";
+			{
+				$genStartStatement = "nationalDex >= {$genStart} AND nationalDex <= {$genEnd}";
+				array_push($statementArray, $genStartStatement);
+			}
+
+			// now take each piece of the statement and append to the statement string
+			foreach($statementArray as $i)
+			{
+				if($i != end($statementArray))
+					$statement = $statement . $i . " AND ";
+				else
+					$statement = $statement . $i . " ";
+			}
 		}
 
-		// return the result; empty string if input is empty
+		// return the resulting statement; empty string if input is empty
 		return $statement;
 	}
 

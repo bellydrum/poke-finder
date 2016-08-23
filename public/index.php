@@ -12,6 +12,13 @@
 	if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
 		// gather input from $_POST
+
+		/*  CLEAN
+		  *   THIS
+		   *   SHIT
+		    *   UP
+		     */
+
 		$caughtStatus = $_POST['caughtStatus'];
 		$type = $_POST['type'];
 		$generation = findRange($_POST['generation']);
@@ -20,14 +27,18 @@
 
 
 
-
 		// use input to create sql statements
-		$statement = generateStatement($caughtStatus, $type, $genStart, $genEnd);
+		$whereClause = generateStatement($caughtStatus, $type, $genStart, $genEnd);
+		$statement = "SELECT * FROM pokemon " . $whereClause . "ORDER BY nationalDex;";
+		print($statement);
 
-		print($statement . "\n");
-		$sql_command = "SELECT * FROM pokemon {$statement} ORDER BY nationalDex;";
-		print($sql_command);
-
+		foreach($db->query($statement) as $row)
+		{
+			echo $row['caughtStatus'] . "\t";
+			echo $row['name'] . "\t";
+			echo $row['type'] . "\t";
+		}	
+	
 		// provide output in pokedex_table
 
 		// use ajax
