@@ -1,5 +1,5 @@
-<select name="caughtStatus">
-	<option value="">Select an option</option>
+<select id='select-box' name='caughtStatus'>
+	<option value="">Caught / Uncaught</option>
 	<option value=""></option>
 	<option value="caught">Caught</option>
 	<option value="uncaught">Uncaught</option>

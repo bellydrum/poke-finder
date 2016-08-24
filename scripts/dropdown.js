@@ -1,16 +1,48 @@
 // emulates dropdown menu
-// tympanus.net/codrops/2012/10/04/custom-drop-down-list-styling/
 
-obj.dd.on('click', function(event) {
-	$(this).toggleClass('active');
-	return false;
-});
+var caughtStatusList = [
+	{
+		label: '', value: ''
+	},
+	{
+		label: 'Caught', value: 'caught'
+	},
+	{
+		label: 'Uncaught', value: 'uncaught'
+	}]
 
-$(function() {
-	var dd = new DropDown( $('#dd') );
-	
-	$(document).click(function() {
-		// all dropdowns	
-		$('.wrapper-dropdown-1').removeClass('active');
+$().ready(function() {
+	$('#caughtStatus').autocomplete({
+		min.Length: 0,
+		source: caughtStatusList,
+		delay: 0,
+		focus: function( event, ui ) {
+			$(this).val( ui.item.label );
+			return false;
+		},
+		select: function( event, ui ) {
+			$(this).blur();
+			$(this.val( ui.item.label );
+			return false;
+		},
+		change: function (event, ui ) {
+			if ($(".ui-autocomplete li:textEquals('" + $(this).val() + "')").size() == 0) {
+				$(this).val('');
+				$('#hidPositionType').val('');
+			}
+		},
+		close: function(event, ui) {
+			$(this).blur();
+			return false;
+		}
+	})
+	.focus(function() {
+		$(this).autocomplete('search','');
+	})
+	.data( "autocomplete" )._renderItem = function( ul, item ) {
+		return $( "<li></li>" )
+			.data( "item.autocomplete", item)
+			.append( "<a>" + item.label + "</a>" )
+			.appendTo( ul );
+		};
 	});
-});

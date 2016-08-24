@@ -56,14 +56,14 @@
 
 
 	// creates SQL statements from user input
-	function generateStatement($caughtStatus, $type, $genStart, $genEnd)
+	function generateStatement($caughtStatus, $type, $type2, $genStart, $genEnd)
 	{
 		// initialize statement to an empty string
 		$statement = "";
 
 
 		// if any user input exists, create beginning of statement
-		if(!($caughtStatus == "" && $type == "" && $genStart == "" && $genEnd == ""))
+		if(!($caughtStatus == "" && $type == "" && $type2 == "" && $genStart == "" && $genEnd == ""))
 		{
 			// start statement string
 			$statement = "WHERE ";
@@ -80,8 +80,13 @@
 			}
 			if($type != "")
 			{
-				$typeStatement = "type = '{$type}'";
+				$typeStatement = "(type = '{$type}' OR type2 = '{$type}')";
 				array_push($statementArray, $typeStatement);
+			}
+			if($type2 != "")
+			{
+				$type2Statement = "(type = '{$type2}' OR type2 = '{$type2}')";
+				array_push($statementArray, $type2Statement);
 			}
 			if($genStart != "" && $genEnd != "")
 			{

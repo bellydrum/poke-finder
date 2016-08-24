@@ -1,4 +1,8 @@
-<div id="form_div">
+<div id="form-div">
+
+<!-- dropdown menus -->
+<div id='choices-container'>
+
 	<form action="" method="POST">
 
 
@@ -17,6 +21,13 @@
 
 
 	<div class='form-dropdown-div'>
+		<!-- specify further the type of pokemon to show -->
+		<!-- $_POST['type2'] -->
+		<?php require('pokedex_form/type2Dropdown.php'); ?>
+	</div>
+
+
+	<div class='form-dropdown-div'>
 		<!-- show pokemon of a certain generation -->
 		<!-- $_POST['generation'] -->
 		<?php require('pokedex_form/generationDropdown.php'); ?>
@@ -27,12 +38,15 @@
 		<?php // require('pokedex_form/regionDropdown.php'); ?>
 	</div -->
 
+</div>
 
+<!-- submit button -->
+<div id='submit-container'>
 	<div class='form-submit-div'>
 		<!-- submit back to index.php -->
-		<input type="submit" value="Go!">
+		<input type='submit' id='submit' value="Search!">
 	</div>
-
+</div>
 
 	</form>
 </div>

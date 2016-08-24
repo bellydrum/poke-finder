@@ -21,6 +21,7 @@
 
 		$caughtStatus = $_POST['caughtStatus'];
 		$type = $_POST['type'];
+		$type2 = $_POST['type2'];
 		$generation = findRange($_POST['generation']);
 		$genStart = $generation[0];
 		$genEnd = $generation[1];
@@ -28,16 +29,12 @@
 
 
 		// use input to create sql statements
-		$whereClause = generateStatement($caughtStatus, $type, $genStart, $genEnd);
+		$whereClause = generateStatement($caughtStatus, $type, $type2, $genStart, $genEnd);
 		$statement = "SELECT * FROM pokemon " . $whereClause . "ORDER BY nationalDex;";
-		print($statement);
-
-		foreach($db->query($statement) as $row)
-		{
-			echo $row['caughtStatus'] . "\t";
-			echo $row['name'] . "\t";
-			echo $row['type'] . "\t";
-		}	
+		
+		$rows = $db->query($statement);
+		
+		require('../views/pokedex_table.php');
 	
 		// provide output in pokedex_table
 

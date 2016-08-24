@@ -1,0 +1,72 @@
+
+
+
+/* container for everything */
+#form-div {
+	padding-left:20%;
+	padding-right:20%;
+}
+
+
+
+
+
+/* choices container */
+#choices-container {
+	
+	padding:40px;
+	border:1px black dotted;
+}
+
+
+/* all buttons */
+select {
+	padding:10px;
+	margin:10px;
+	background-color:#ffffdd;
+	float:left;
+}
+
+select:hover {
+	background-color:#ffffaa;
+}
+
+
+
+
+/* first button */
+select[name='caughtStatus'] {
+	float:auto;
+}
+
+
+
+/* second button */
+select[name='type'] {
+	float:auto;
+
+}
+
+
+/* third button */
+select[name='type2'] {
+	float:auto;
+}
+
+
+
+/* fourth button */
+select[name='generation'] {
+	float:auto;
+}
+
+
+/* submit button */
+#submit {
+
+	padding:10px;
+	margin:5px;
+	background-color:silver;
+	float:right;
+
+}

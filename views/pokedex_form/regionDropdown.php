@@ -1,5 +1,5 @@
-<select name="region">
-	<option value="">Select a region</option>
+<select id='select-box' name='region'>
+	<option value="">Region</option>
 	<option value=""></option>
 	<option value="Kanto">Kanto</option>
 	<option value="Johto">Johto</option>

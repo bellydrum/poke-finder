@@ -1,5 +1,5 @@
-<select name="generation">
-	<option value="">Select a generation</option>
+<select id='select-box' name='generation'>
+	<option value="">Generation</option>
 	<option value=""></option>
 	<?php
 		for($i=1; $i<8; $i++)
