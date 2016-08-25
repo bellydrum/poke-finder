@@ -1,10 +1,9 @@
-<div id="form-div">
+<div id='form-div' class='section-div'>
 
 <!-- dropdown menus -->
 <div id='choices-container'>
 
 	<form action="" method="POST">
-
 
 	<div class='form-dropdown-div'>
 		<!-- show caught or uncaught pokemon -->
@@ -37,7 +36,6 @@
 	<!--div class='form-dropdown-div'>
 		<?php // require('pokedex_form/regionDropdown.php'); ?>
 	</div -->
-
 </div>
 
 <!-- submit button -->
