@@ -98,9 +98,9 @@
 			foreach($statementArray as $i)
 			{
 				if($i != end($statementArray))
-					$statement = $statement . $i . " AND ";
+					$statement = $statement . $i . " AND";
 				else
-					$statement = $statement . $i . " ";
+					$statement = $statement . $i;
 			}
 		}
 
@@ -108,5 +108,17 @@
 		return $statement;
 	}
 
+	function updateCaughtStatus($pokemonId)
+	{
+		$newCaughtStatus;
+		$row = $db->query("SELECT caughtStatus WHERE nationalDex = {$pokemonId};");
+
+		if($row['caughtStatus'] == 'uncaught')
+			$newCaughtStatus = 'caught';
+		else
+			$newCaughtStatus = 'uncaught';
+
+		return $newCaughtStatus;
+	}
 
 ?>

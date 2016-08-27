@@ -3,12 +3,11 @@
 	
 	// generate base html
 	render("header", ["title"=>"Pokemon Finder"]);
+
+	// generate search form
 	render("pokedex_form");
 
-
-
-
-	// if arriving at page via submit button
+	// if arriving at page via search form submit button
 	if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
 		// gather input from $_POST
@@ -26,14 +25,12 @@
 		$genStart = $generation[0];
 		$genEnd = $generation[1];
 
-
-
-		// use input to create sql statements
+		// use input to create sql query and store results in a variable
 		$whereClause = generateStatement($caughtStatus, $type, $type2, $genStart, $genEnd);
-		$statement = "SELECT * FROM pokemon " . $whereClause . "ORDER BY nationalDex;";
-		
+		$statement = "SELECT * FROM pokemon " . $whereClause . " ORDER BY nationalDex;";		
 		$rows = $db->query($statement);
 		
+		// generate data table using SQL query results
 		require('../views/pokedex_table.php');
 	
 		// provide output in pokedex_table

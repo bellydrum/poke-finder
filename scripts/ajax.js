@@ -1,9 +1,9 @@
 // value is form value
 // id is id of div to inject response html
 
-function ajax_request(value, id)
+function ajax_request(rowsObject)
 {
-	if(value == "")
+	if(!rowsObject)
 		return;
 
 	// create new ajax object
@@ -14,11 +14,17 @@ function ajax_request(value, id)
 	{
 		if(aj.readyState == 4 && aj.status == 200)
 		{
-			$(id).html(aj.responseText);
-			// do something to the page
+			
 		}
 	};
 
-	aj.open("GET",'../views/pokemon/' +  value + '.html', true);
+	aj.open("GET", '../views/pokedex_table.php', true);
 	aj.send();
 }
+
+
+function showTable(
+
+
+
+
