@@ -31,16 +31,21 @@
 				<!-- table row -->
 				<tr class='table-row'>
 
-					<!-- pokeball png if caught; no image if uncaught -->
-					<td class='pokeball'>
-					<div class='cell-div'><?php echo "<img src='../includes/images/pokeball.png' ";
-						if($row['caughtStatus'] == "caught") {
-							echo "class='opaquePokeball'";
-						}
-						else if($row['caughtStatus'] == 'uncaught') {
-							echo "class='fadedPokeball'";
-						echo " />";
-						} ?></div></td>
+					<!-- opaque pokeball png if caught; faded image if uncaught -->
+					<td class='pokeball-wrapper'>
+							<?php
+								echo "<img src='../includes/images/pokeball.png' ";
+								
+								if($row['caughtStatus'] == "caught") {
+									echo "class='opaquePokeball'";
+								}
+								else if($row['caughtStatus'] == 'uncaught') {
+									echo "class='fadedPokeball'";
+								}
+
+								echo " />";
+							?>
+					</td>
 
 					<!-- display national dex number -->
 					<td id='nationalDexCell'><?= $row['nationalDex']?></td>
