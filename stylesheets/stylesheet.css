@@ -1,58 +1,173 @@
+body {
+	background-image:url('../includes/images/wallpaper.png');
+	background-attachment:fixed;
+}
+
 
 /*        CONTAINERS       */
 
 
-
-
-/* FORM AND TABLE CONTAINERS */
-
-
-
-/* both containers */
-.section-div {
+#body-div {
+	/* border:3px solid red; */
 	margin-right:auto;
 	margin-left:auto;
-	width:75%;
+	width:55%;
+	font-family:'Arial';
+
+
+}
+
+
+
+/*
+
+		POKEMON
+
+
+*/
+
+#pokemon-header-wrapper {
+	/* border:1px solid black; */
+	margin-right:auto;
+	margin-left:auto;
+	padding-bottom:50px;
+	width:100%;
 	text-align:center;
-
 }
 
-/* container for whole form */
+#pokemon-header {
+	/* border:1px dotted blue; */
+	width:50%;
+}
+
+
+
+
+
+
+
+
+
+/*	CAUGHT	TYPE	SECOND TYPE	GENERATION      */
+
+		/* SUBMIT  */
+
+
+/* container for form (selects + submit) */
 #form-div {
-	margin-bottom:10px;
-	padding:10px;
-	border:none;
+	/* border:1px solid black; */
+	margin-right:auto;
+	margin-left:auto;
+	margin-bottom:0px;
+	padding-bottom:50px;
+	width:100%;
+	text-align:center;
+	display:inline-block;
 }
+
+
+
+
+
+
+
+
+
+/*	CAUGHT 	TYPE	SECOND TYPE	GENERATION	*/
+
+
+/* container for selects */
+#choices-container {
+	/* border:1px dotted blue; */
+	padding-top:0px;
+	padding-bottom:25px;
+	margin-bottom:0px;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	display:inline-block;
+}
+
+
+
+
+
+
+
+/*		SUBMIT			*/
+
+
+
+/* container for submit */
+#submit-container {
+	/* border:1px dotted red; */
+	padding:0px;
+	margin-top:0px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:0px;
+	width:100%;
+	float:left;
+}
+
+
+
+
+
+/*	Here are the Pokemon you haven't caught yet! */
+
+
+/* optional text explaining table on $_GET arrival */
+#explainer {
+	/* border:1px dotted blue; */
+	margin-right:auto;
+	margin-left:auto;
+	padding-bottom:25px;
+	width:100%;
+	text-align:center;
+}
+
+
+
+
+
+
+
+
+
+/*	_________________________________
+	|	|	|	|	|
+	|	|	|	|	|
+	|	|	|	|	|
+	________________________________
+	|	|	|	|	|
+	|	|	|	|	|
+	|	|	|	|	|
+	_________________________________
+	|	|	|	|	|
+	|	|	|	|	|
+	...	...	...	...	...
+
+
+
+						*/
 
 
 /* container for whole table */
 #table-div {
-	padding:10px;
-	border:none;
-}
-
-
-/* choices container */
-#choices-container {
-	
-	padding-top:10px;
-	padding-bottom:30px;
-	margin-bottom:10px;
-	margin-left:auto;
+	/* border:1px solid black; */
 	margin-right:auto;
+	margin-left:auto;
+	margin-bottom:120px;
 	width:100%;
-}
-
-
-#submit-container {
-
+	text-align:center;
 	padding:0px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:20px;
-	width:100%;
-	float:left;
 }
+
+
+
+
+
 
 
 
@@ -66,11 +181,15 @@
 
 /* all form  buttons */
 select {
-	margin:4px;
-	padding:10px;
-	background-color:#ffff;
-	width:20%;
-	float:left;	
+	border:1px #696969 solid;
+	border-radius:2px;
+	margin-left:0px;
+	padding-top:10px;
+	padding-bottom:10px;
+	background-color:silver;
+	width:25%;
+	float:left;
+	text-align:center;
 }
 select:hover {
 	background-color:#ffffdd;
@@ -108,8 +227,8 @@ select[name='generation'] {
 
 /* submit button */
 #submit {
-	border:1px black solid;
-	border-radius:8px;
+	border:1px #696969 solid;
+	border-radius:2px;
 	padding:10px;
 	margin:0 auto;
 	background-color:silver;
@@ -125,7 +244,7 @@ select[name='generation'] {
 
 /* table itself */
 #pokedex-table {
-	border:1px black solid;
+	border:1px #696969 solid;
 	border-radius:8px;
 	padding-bottom:20px;
 	background-color:#ffffaa;

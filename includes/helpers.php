@@ -98,7 +98,7 @@
 			foreach($statementArray as $i)
 			{
 				if($i != end($statementArray))
-					$statement = $statement . $i . " AND";
+					$statement = $statement . $i . " AND ";
 				else
 					$statement = $statement . $i;
 			}

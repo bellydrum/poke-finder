@@ -1,23 +1,21 @@
 <?php
+	// custom functions are found in '../includes/helpers.php'
+	// this is imported by config.php
 	require('../includes/config.php');
 	
 	// generate base html
-	render("header", ["title"=>"Pokemon Finder"]);
+	render('header', ['title'=>"Pokemon Finder"]);
+
+	// render pokemon header
+	render('pokemon_logo');
 
 	// generate search form
-	render("pokedex_form");
+	render('pokedex_form');
 
-	// if arriving at page via search form submit button
+	// if arriving at page via form submit $_POST method
 	if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
 		// gather input from $_POST
-
-		/*  CLEAN
-		  *   THIS
-		   *   SHIT
-		    *   UP
-		     */
-
 		$caughtStatus = $_POST['caughtStatus'];
 		$type = $_POST['type'];
 		$type2 = $_POST['type2'];
@@ -25,25 +23,35 @@
 		$genStart = $generation[0];
 		$genEnd = $generation[1];
 
-		// use input to create sql query and store results in a variable
+		// use input to generate sql query and store resulting query string in a variable
 		$whereClause = generateStatement($caughtStatus, $type, $type2, $genStart, $genEnd);
 		
 		require('../includes/statements.php');
 
+		// uncomment to see the sql query that generateStatement() is generating
+		// print($selectStatement);
+
+		// pull information from database and store in $rows
 		$rows = $db->query($selectStatement);
 
 		// following statement switches caughtStatus for all rows
 		//$db->query($updateStatement);
-		// generate data table using SQL query results
+
+		// generate table using query results
 		require('../views/pokedex_table.php');
-	
-		// provide output in pokedex_table
+	}
 
-		// use ajax
+	// if arriving at page via url $_GET method	
+	else if($_SERVER['REQUEST_METHOD'] == 'GET')
+	{
+		// insert text explaining table of uncaught pokemon
+		require('../views/explainer.php');
 
+		// pull all uncaught pokemon from database
+		$rows = $db->query("SELECT * FROM pokemon WHERE caughtStatus = 'uncaught';");
 
-
-
+		// generate table using query results
+		require('../views/pokedex_table.php');
 	}
 
 

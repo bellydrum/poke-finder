@@ -42,7 +42,7 @@
 <div id='submit-container'>
 	<div class='form-submit-div'>
 		<!-- submit back to index.php -->
-		<input type='submit' id='submit' value="Search!">
+		<input type='submit' id='submit' class='button' value="Search!">
 	</div>
 </div>
 

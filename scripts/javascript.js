@@ -21,3 +21,11 @@ $(document).ready(function() {
 
 	});
 });
+
+
+$('.button').mouseenter(function() {
+	$(this).animate({'background-color':'#ffff99', 'letterSpacing':'+=2px', 'fontSize':'+=2px'}, 'fast');
+});
+$('.button').mouseleave(function() {
+	$(this).animate({'background-color':'silver', 'letterSpacing':'-=2px', 'fontSize':'-=2px'}, 'fast');
+});

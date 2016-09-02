@@ -3,8 +3,7 @@
 	$types = file($file, FILE_IGNORE_NEW_LINES);
 ?>
 
-<select id='select-box' name='type'>
-
+<select id='select-box' class='button' name='type'>
 	<option value="">Type</option>
 	<option value=""></option>
 	<?php foreach($types as $type): ?>
