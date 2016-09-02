@@ -24,7 +24,7 @@
 		<!-- loop through each returned data row from the sql query
 		     and build a table row out of each piece of information -->
 		<?php foreach($rows as $row): ?>
-
+			
 			<!-- table row wrapper -->
 			<div class='table-row-class'>
 
@@ -51,7 +51,13 @@
 					<td id='nationalDexCell'><?= $row['nationalDex']?></td>
 
 					<!-- display pokemon species -->
-					<td id='nameCell'><?= $row['name']?></td>
+					<!-- first create custom url string -->
+					<?php $url = 'http://bulbapedia.bulbagarden.net/wiki/' . $row['name'] . '_(Pok%C3%A9mon)#Game_locations';?>
+					<td class='nameCell'>
+						<a href='<?=$url;?>'>
+								<?= $row['name']?>
+						</a>
+					</td>
 
 					<!-- display pokemon type -->
 					<td id='typeCell'><?php
