@@ -25,28 +25,37 @@
 		     and build a table row out of each piece of information -->
 		<?php foreach($rows as $row): ?>
 
-			<!-- table row -->
-			<tr id='table-row'>
+			<!-- table row wrapper -->
+			<div class='table-row-class'>
 
-				<!-- pokeball png if caught; no image if uncaught -->
-				<td id='caughtCell'><?php
-					if($row['caughtStatus'] == "caught"){
-						echo "<img src='../includes/images/pokeball.png' />";
-					} ?></td>
+				<!-- table row -->
+				<tr class='table-row'>
 
-				<!-- display national dex number -->
-				<td id='nationalDexCell'><?= $row['nationalDex']?></td>
+					<!-- pokeball png if caught; no image if uncaught -->
+					<td class='pokeball'>
+					<div class='cell-div'><?php echo "<img src='../includes/images/pokeball.png' ";
+						if($row['caughtStatus'] == "caught") {
+							echo "class='opaquePokeball'";
+						}
+						else if($row['caughtStatus'] == 'uncaught') {
+							echo "class='fadedPokeball'";
+						echo " />";
+						} ?></div></td>
 
-				<!-- display pokemon species -->
-				<td id='nameCell'><?= $row['name']?></td>
+					<!-- display national dex number -->
+					<td id='nationalDexCell'><?= $row['nationalDex']?></td>
 
-				<!-- display pokemon type -->
-				<td id='typeCell'><?php
-					echo $row['type'];
-					if($row['type2'] != 'NULL'){
-						echo " / " . $row['type2'];
-					} ?></td>
-			</tr>
+					<!-- display pokemon species -->
+					<td id='nameCell'><?= $row['name']?></td>
+
+					<!-- display pokemon type -->
+					<td id='typeCell'><?php
+						echo $row['type'];
+						if($row['type2'] != 'NULL') {
+							echo " / " . $row['type2'];
+						} ?></td>
+				</tr>
+			</div>
 
 		<?php endforeach; ?>
 

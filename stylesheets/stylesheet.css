@@ -159,12 +159,13 @@ select[name='generation'] {
 }
 
 
-#table-row {
+.table-row {
 	background-color:#ffffaa;
+	height:25px;
 }
 
 
-#table-row:hover {
+.table-row:hover {
 	background-color:#ffffdd;
 }
 
@@ -172,11 +173,30 @@ select[name='generation'] {
 /* every cell */
 td {
 	text-align:center;
+	height:50px;
+}
+
+/* just the caughtStatus cell */
+.cell-div {
+	display:block;
+	height:100%;
+	width:100%;
 }
 
 
 #caughtCell {
 	padding:10px;
+	height:18px;
+}
+
+.fadedPokeball {
+	opacity: 0.1;
+	height:30px;
+}
+
+.opaquePokeball {
+	opacity: 1.0;
+	height:36px;
 }
 
 

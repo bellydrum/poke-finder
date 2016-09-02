@@ -3,7 +3,7 @@
 <!-- dropdown menus -->
 <div id='choices-container'>
 
-	<form action="" method="POST">
+	<form action="" method="POST" id='pokedex_form'>
 
 	<div class='form-dropdown-div'>
 		<!-- show caught or uncaught pokemon -->

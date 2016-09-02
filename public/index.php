@@ -27,9 +27,13 @@
 
 		// use input to create sql query and store results in a variable
 		$whereClause = generateStatement($caughtStatus, $type, $type2, $genStart, $genEnd);
-		$statement = "SELECT * FROM pokemon " . $whereClause . " ORDER BY nationalDex;";		
-		$rows = $db->query($statement);
 		
+		require('../includes/statements.php');
+
+		$rows = $db->query($selectStatement);
+
+		// following statement switches caughtStatus for all rows
+		//$db->query($updateStatement);
 		// generate data table using SQL query results
 		require('../views/pokedex_table.php');
 	
