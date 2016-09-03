@@ -40,7 +40,7 @@
 					<td class='pokeball-wrapper'>
 							<?php
 								echo "<img src='../includes/images/pokeball.png' ";
-								
+
 								if($row['caughtStatus'] == "caught") {
 									echo "class='opaquePokeball'";
 								}
@@ -70,7 +70,7 @@
 					<td class='nameCell'>
 						<a href='<?=$url;?>'>
 								<div><?= $row['name']?></div>
-								<div><img src='../includes/images/icons/<?=$icon;?>'/></div>
+								<div><img src='../includes/images/icons/pokemon/<?=$icon;?>'/></div>
 						</a>
 					</td>
 
