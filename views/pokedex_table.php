@@ -28,16 +28,23 @@
 			
 			// run the following code for each resulting row from the sql query
 			foreach($rows as $row):
+
+				$count = $row['nationalDex'];
 		?>
 			
 			<!-- table row wrapper -->
 			<div class='table-row-class'>
 
 				<!-- table row -->
-				<tr class='table-row'>
+				<tr class='table-row' id='row-<?=$count;?>'>
 
 					<!-- opaque pokeball png if caught; faded image if uncaught -->
-					<td class='pokeball-wrapper'>
+					<td class='pokeball-wrapper<?php
+									if((($_SERVER['REQUEST_METHOD'] == 'POST')
+										&& $_POST['caughtStatus'] != '')
+									|| ($_SERVER['REQUEST_METHOD'] == 'GET'))
+											echo " removable'";
+								?>'>
 							<?php
 								echo "<img src='../includes/images/pokeball.png' ";
 
@@ -48,7 +55,7 @@
 									echo "class='fadedPokeball'";
 								}
 
-								echo " />";
+								echo " id='{$row["nationalDex"]}'/>";
 							?>
 					</td>
 
@@ -58,7 +65,7 @@
 					<!-- display pokemon species -->
 					<?php
 						$url = 'http://bulbapedia.bulbagarden.net/wiki/' . $row['name'] . '_(Pok%C3%A9mon)#Game_locations';
-						$count = $row['nationalDex'];
+						// $count is defined above because it is also used to define a td id
 						$icon = "";
 						if($count < 10)
 							$icon = "00" . $count . ".png";
@@ -88,5 +95,9 @@
 		</tbody>
 	</table>
 
+
 	<?php endif; ?>
 </div>
+
+<!-- this is the cute little berry footer that elle didn't like -->
+<!--?php render('footer_row'); ?-->

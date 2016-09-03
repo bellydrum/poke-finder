@@ -363,3 +363,19 @@ td {
 
 
 }
+
+#footer-row {
+
+	padding-top:30px;
+	padding-bottom:15px;
+	display:inline-block;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+}
+
+.berry-div {
+	display:inline-block;
+	margin-left:27px;
+	float:left;
+}
