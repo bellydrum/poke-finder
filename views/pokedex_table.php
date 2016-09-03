@@ -69,8 +69,8 @@
 					?>
 					<td class='nameCell'>
 						<a href='<?=$url;?>'>
-								<?= $row['name']?>
-								<img src='../includes/images/icons/<?=$icon;?>' />
+								<div><?= $row['name']?></div>
+								<div><img src='../includes/images/icons/<?=$icon;?>'/></div>
 						</a>
 					</td>
 
