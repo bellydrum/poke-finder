@@ -23,7 +23,12 @@
 		
 		<!-- loop through each returned data row from the sql query
 		     and build a table row out of each piece of information -->
-		<?php foreach($rows as $row): ?>
+
+		<?php
+			
+			// run the following code for each resulting row from the sql query
+			foreach($rows as $row):
+		?>
 			
 			<!-- table row wrapper -->
 			<div class='table-row-class'>
@@ -51,11 +56,21 @@
 					<td id='nationalDexCell'><?= $row['nationalDex']?></td>
 
 					<!-- display pokemon species -->
-					<!-- first create custom url string -->
-					<?php $url = 'http://bulbapedia.bulbagarden.net/wiki/' . $row['name'] . '_(Pok%C3%A9mon)#Game_locations';?>
+					<?php
+						$url = 'http://bulbapedia.bulbagarden.net/wiki/' . $row['name'] . '_(Pok%C3%A9mon)#Game_locations';
+						$count = $row['nationalDex'];
+						$icon = "";
+						if($count < 10)
+							$icon = "00" . $count . ".png";
+						else if($count < 100)
+							$icon = "0" . $count . ".png";
+						else if($count < 1000)
+							$icon = $count . ".png";
+					?>
 					<td class='nameCell'>
 						<a href='<?=$url;?>'>
 								<?= $row['name']?>
+								<img src='../includes/images/icons/<?=$icon;?>' />
 						</a>
 					</td>
 
