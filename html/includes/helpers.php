@@ -46,6 +46,9 @@
 				$start = 650;
 				$end = 721;
 				break;
+			case 7:
+				$start = 722;
+				$end = 772;
 			default:
 				$start = "";
 				$end = "";
