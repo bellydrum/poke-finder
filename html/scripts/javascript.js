@@ -1,37 +1,32 @@
 
 
-/* makes pokeball disappear! wow!! */
-
 $(document).ready(function() {
-	$('.removable').click(function() {
-		$(this).parent().fadeOut(500);
 
-		/*    uncomment this when i've got the update query figured out
+	/* the following listeners are activated once the whole page is loaded */
+
+
+	/* makes pokeball disappear! wow!! */
+	$('.pokeball-wrapper').click(function() {
 		$(this).children('img.fadedPokeball').fadeTo('fast', 1.0);
 		$(this).children('img.opaquePokeball').fadeTo('fast', 0.1);
 		$(this).children('img').toggleClass('fadedPokeball opaquePokeball');
-		*/		
-
-
-
-		// put ajax call here when i've got the update query figured out
-		$.ajax({
-			url:'../includes/updateStatement.php'
-		});
 	});
+
+	
+	/* makes hovering around the buttons look cool */
+	$('.button').mouseenter(function() {
+		$(this).animate({'background-color':'#ffff99', 'letterSpacing':'+=2px', 'fontSize':'+=1px'}, 'fast');
+	});
+	$('.button').mouseleave(function() {
+		$(this).animate({'background-color':'silver', 'letterSpacing':'-=2px', 'fontSize':'-=1px'}, 'fast');
+	});
+
+
+
 });
 
-
-
-$('.pokeball-wrapper').click(function() {
-	var id = $(this).attr('id')
-});
-
-
-
-$('.button').mouseenter(function() {
-	$(this).animate({'background-color':'#ffff99', 'letterSpacing':'+=2px', 'fontSize':'+=1px'}, 'fast');
-});
-$('.button').mouseleave(function() {
-	$(this).animate({'background-color':'silver', 'letterSpacing':'-=2px', 'fontSize':'-=1px'}, 'fast');
+$(document).ready(function() {
+	$('.removable').click(function() {
+		$(this).parent().fadeOut(400);
+	});
 });

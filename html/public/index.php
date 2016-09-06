@@ -33,12 +33,6 @@
 
 		// pull information from database and store in $rows
 		$rows = $db->query($selectStatement);
-
-		// following statement switches caughtStatus for all rows
-		//$db->query($updateStatement);
-
-		// generate table using query results
-		require('../views/pokedex_table.php');
 	}
 
 	// if arriving at page via url $_GET method	
@@ -49,15 +43,12 @@
 
 		// pull all uncaught pokemon from database
 		$rows = $db->query("SELECT * FROM pokemon WHERE caughtStatus = 'uncaught';");
-
-		// generate table using query results
-		require('../views/pokedex_table.php');
 	}
 
-
+	// generate table using query results
+	require('../views/pokedex_table.php');
 
 	// close html
 	render("footer");
-
 
 ?>

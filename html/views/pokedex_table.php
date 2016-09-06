@@ -40,12 +40,18 @@
 
 					<!-- opaque pokeball png if caught; faded image if uncaught -->
 					<td class='pokeball-wrapper<?php
-									if((($_SERVER['REQUEST_METHOD'] == 'POST')
-										&& $_POST['caughtStatus'] != '')
-									|| ($_SERVER['REQUEST_METHOD'] == 'GET'))
-											echo " removable'";
-								?>'>
-							<?php
+									if
+									(
+										(
+											($_SERVER['REQUEST_METHOD'] == 'POST')
+											&&
+											($_POST['caughtStatus'] != '')
+										)
+										||
+										($_SERVER['REQUEST_METHOD'] == 'GET')
+									)
+											print( " removable");
+								print("'>");
 								echo "<img src='../includes/images/pokeball.png' ";
 
 								if($row['caughtStatus'] == "caught") {

@@ -1,10 +1,29 @@
+
+
+
+
+
+
+/* here's the wallpaper */
 body {
 	background-image:url('../includes/images/wallpaper.png');
 	background-attachment:fixed;
 }
 
 
+
+
+
+
+
+
+
 /*        CONTAINERS       */
+
+
+
+
+
 
 
 #body-div {
@@ -20,10 +39,7 @@ body {
 
 
 /*
-
 		POKEMON
-
-
 */
 
 #pokemon-header-wrapper {
@@ -188,6 +204,7 @@ select {
 	border-radius:0px;
 	margin-left:0px;
 	padding-top:10px;
+	
 	padding-bottom:10px;
 	background-color:silver;
 	width:25%;
@@ -314,7 +331,7 @@ td {
 }
 
 .fadedPokeball {
-	opacity: 0.1;
+	opacity: 0.3;
 	height:30px;
 }
 
@@ -366,7 +383,7 @@ td {
 
 #footer-row {
 
-	padding-top:30px;
+	padding-top:0px;
 	padding-bottom:15px;
 	display:inline-block;
 	margin-left:auto;
