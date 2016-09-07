@@ -70,7 +70,7 @@ $(document).ready(function() {
 		$(this).animate({
 			'background-color':'#64c2e2',
 			'opacity':'1',
-			'width':'106%',
+			'width':'105%',
 			'fontSize':'+=1px'
 			}, 'fast');
 		$(this).addClass('expanded');
@@ -85,7 +85,7 @@ $(document).ready(function() {
                                 	}, 'fast');
 			}
 		}
-		else if($(this).attr('id') == 'criteria-wrapper') {
+		if($(this).attr('id') == 'criteria-wrapper') {
 			if($('#name-wrapper').hasClass('expanded')) {
 				$('#name-wrapper').removeClass('expanded');
 				$('#name-wrapper').animate({

@@ -104,6 +104,8 @@ body {
         display:block;
         overflow:hidden;
         opacity:0.5;
+	padding-left:8px;
+	padding-right:8px;
 }
 
 #criteria-wrapper {
@@ -113,6 +115,9 @@ body {
         display:block;
         overflow:hidden;
         opacity:0.5;
+	margin-top:5px;
+	padding-left:8px;
+	padding-right:8px;
 }
 
 
@@ -192,6 +197,7 @@ body {
 	/*border:1px solid black;*/
 
 	border-radius:8px;
+	margin-top:15px;
 	margin-right:auto;
 	margin-left:auto;
 	padding-top:16px;
@@ -233,6 +239,7 @@ body {
 
 	/*border:1px solid black;*/
 
+	margin-top:15px;
 	margin-right:auto;
 	margin-left:auto;
 	margin-bottom:120px;

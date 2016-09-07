@@ -8,4 +8,4 @@ TODO:
 	// all done with ajax
 - create small name + description under pokemon logo
 - fix form divs expansion animation
-- edit margins between divs
+
