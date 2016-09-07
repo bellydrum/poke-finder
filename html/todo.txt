@@ -1,6 +1,5 @@
 TODO:
 
-- add name search field with select bars
 - add side column with
 	- caught / uncaught count
 	- catch all onscreen
@@ -8,4 +7,5 @@ TODO:
 	- info
 	// all done with ajax
 - create small name + description under pokemon logo
-
+- fix form divs expansion animation
+- edit margins between divs

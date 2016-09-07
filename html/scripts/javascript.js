@@ -47,16 +47,12 @@ $(document).ready(function() {
 $(document).ready(function() {
         $('.button').mouseenter(function() {
                 $(this).animate({
-			'background-color':'#ffff99',
-			'letterSpacing':'+=2px',
-			'fontSize':'+=1px'
+			'background-color':'#ffff99'
 			}, 'fast');
         });
         $('.button').mouseleave(function() {
                 $(this).animate({
-			'background-color':'silver',
-			'letterSpacing':'-=2px',
-			'fontSize':'-=1px'
+			'background-color':'silver'
 			}, 'fast');
         });
 });
@@ -77,14 +73,28 @@ $(document).ready(function() {
 			'width':'106%',
 			'fontSize':'+=1px'
 			}, 'fast');
-	});
-
-	$('.form-wrapper').mouseleave(function() {
-		$(this).animate({
-			'background-color':'#2bade2',
-			'opacity':'0.3',
-			'width':'100%',
-			'fontSize':'-=1px'
-			}, 'fast');
+		$(this).addClass('expanded');
+		if($(this).attr('id') == 'name-wrapper') {
+			if($('#criteria-wrapper').hasClass('expanded')) {
+				$('#criteria-wrapper').removeClass('expanded');
+				$('#criteria-wrapper').animate({
+	                                'background-color':'#2bade2',
+        	                        'opacity':'0.3',
+                	                'width':'100%',
+                        	        'fontSize':'-=1px'
+                                	}, 'fast');
+			}
+		}
+		else if($(this).attr('id') == 'criteria-wrapper') {
+			if($('#name-wrapper').hasClass('expanded')) {
+				$('#name-wrapper').removeClass('expanded');
+				$('#name-wrapper').animate({
+                                	'background-color':'#2bade2',
+                        	        'opacity':'0.3',
+                	                'width':'100%',
+        	                        'fontSize':'-=1px'
+	                                }, 'fast');
+			}
+		}
 	});
 });

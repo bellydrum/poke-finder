@@ -65,8 +65,12 @@
 		$rows = $db->query("SELECT * FROM pokemon WHERE caughtStatus = 'uncaught';");
 	}
 
-	// generate table using query results
-	require('../views/pokedex_table.php');
+	// never show an empty table
+	if(isset($rows))
+	{
+		// generate table using query results
+		require('../views/pokedex_table.php');
+	}
 
 	// close html
 	render("footer");

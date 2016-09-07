@@ -1,6 +1,6 @@
 <div id='form-div' class='section-div'>
 
-<div class='form-wrapper'>
+<div class='form-wrapper' id='name-wrapper'>
 
         <form action='' method='POST' id='name_form'>
 
@@ -20,7 +20,7 @@
 </div>
 
 
-<div class='form-wrapper'>
+<div class='form-wrapper' id='criteria-wrapper'>
 
 	<form action='' method='POST' id='pokedex_form'>
 

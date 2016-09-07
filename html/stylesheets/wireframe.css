@@ -96,21 +96,27 @@ body {
 
 
 /* containers for the two separate forms */
-.form-wrapper {
 
-	/*border:2px solid green;*/
+#name-wrapper {
+        /*border:2px solid green;*/
 
-	border-radius:10px;
-	display:block;
-	overflow:hidden;
-	opacity:0.5;
+        border-radius:10px;
+        display:block;
+        overflow:hidden;
+        opacity:0.5;
 }
 
-.form-wrapper:hover {
-	
+#criteria-wrapper {
+        /*border:2px solid green;*/
 
-	
+        border-radius:10px;
+        display:block;
+        overflow:hidden;
+        opacity:0.5;
 }
+
+
+
 
 
 
