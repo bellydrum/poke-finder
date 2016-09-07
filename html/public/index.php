@@ -15,24 +15,44 @@
 	// if arriving at page via form submit $_POST method
 	if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
-		// gather input from $_POST
-		$caughtStatus = $_POST['caughtStatus'];
-		$type = $_POST['type'];
-		$type2 = $_POST['type2'];
-		$generation = findRange($_POST['generation']);
-		$genStart = $generation[0];
-		$genEnd = $generation[1];
 
-		// use input to generate sql query and store resulting query string in a variable
-		$whereClause = generateStatement($caughtStatus, $type, $type2, $genStart, $genEnd);
+		// if user used the name text field form
+		if(isset($_POST['name']))
+		{
+			$name = $_POST['name'];
+
+			$selectStatement = generateNameStatement($name);
+
+			$rows = $db->query($selectStatement);
+		}
+
+
+		// if user used the dropdown criteria form
+		else if(isset($_POST['caughtStatus']))
+		{
+			// gather input from $_POST
+			$caughtStatus = $_POST['caughtStatus'];
+			$type = $_POST['type'];
+			$type2 = $_POST['type2'];
+			$generation = findRange($_POST['generation']);
+			$genStart = $generation[0];
+			$genEnd = $generation[1];
+
+			// use input to generate sql query and store resulting query string in a variable
+			$whereClause = generateStatement($caughtStatus, $type, $type2, $genStart, $genEnd);
 		
-		require('../includes/statements.php');
+			require('../includes/statements.php');
 
-		// uncomment to see the sql query that generateStatement() is generating
-		// print($selectStatement);
+			// uncomment to see the sql query that generateStatement() is generating
+			// print($selectStatement);
+		}
+
 
 		// pull information from database and store in $rows
 		$rows = $db->query($selectStatement);
+
+
+
 	}
 
 	// if arriving at page via url $_GET method	

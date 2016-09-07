@@ -55,6 +55,21 @@
 	}
 
 
+	// creates sql statement from name text field form
+	function generateNameStatement($name)
+	{
+		// initialize statement to an empty string
+		$statement = "";
+
+		if($name)
+		{
+			$statement = "SELECT * FROM pokemon WHERE name = '{$name}';";
+		}
+
+		return $statement;
+	}
+
+
 	// creates SQL statements from user input
 	function generateStatement($caughtStatus, $type, $type2, $genStart, $genEnd)
 	{
@@ -108,6 +123,8 @@
 		return $statement;
 	}
 
+
+	// toggles pokemon's caughtStatus between caught and uncaught
 	function updateCaughtStatus($pokemonId)
 	{
 		$newCaughtStatus;

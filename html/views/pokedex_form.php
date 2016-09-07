@@ -1,5 +1,24 @@
 <div id='form-div' class='section-div'>
 
+<div class='form-wrapper'>
+
+        <form action='' method='POST' id='name_form'>
+
+                <div id='choices-container'>
+                        <input type='text' name='name' id='name-bar' autocomplete='on' placeholder="Search for a Pokemon here">
+                </div>
+
+                <div id='submit-container'>
+                        <div class='form-submit-div'>
+                                <input type='submit' id='submit' class='button' value='Search!'>
+                        </div>
+
+                </div>
+
+        </form>
+
+</div>
+
 
 <div class='form-wrapper'>
 
@@ -55,30 +74,6 @@
 
 
 </div>
-
-
-
-
-
-<div class='form-wrapper'>
-
-	<form action='' method='POST' id='name_form'>
-
-		<div id='choices-container'>
-			<input type='text' name='name' id='name-bar' autocomplete='on' placeholder="Search for a Pokemon here">
-		</div>
-
-		<div id='submit-container'>
-			<div class='form-submit-div'>
-				<input type='submit' id='submit' class='button' value='Search!'>
-			</div>
-
-		</div>
-
-	</form>
-
-</div>
-
 
 
 </div>

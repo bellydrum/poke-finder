@@ -1,9 +1,5 @@
 
 
-
-
-
-
 /* here's the wallpaper */
 body {
 	background-image:url('../includes/images/wallpaper.png');
@@ -44,7 +40,7 @@ body {
 #pokemon-header-wrapper {
 	margin-right:auto;
 	margin-left:auto;
-	padding-bottom:50px;
+	padding-bottom:25px;
 	width:100%;
 	text-align:center;
 }
