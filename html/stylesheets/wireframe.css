@@ -1,0 +1,447 @@
+
+
+
+
+
+
+/* here's the wallpaper */
+body {
+	background-image:url('../includes/images/wallpaper.png');
+	background-attachment:fixed;
+}
+
+
+
+
+
+
+
+
+
+/*        CONTAINERS       */
+
+
+
+
+
+
+
+#body-div {
+
+	/*border:3px solid red;*/
+
+	margin-right:auto;
+	margin-left:auto;
+	width:55%;
+	font-family:'Arial';
+
+
+}
+
+
+
+/*
+		POKEMON
+*/
+
+#pokemon-header-wrapper {
+
+	/*border:1px solid black;*/
+
+	margin-right:auto;
+	margin-left:auto;
+	padding-bottom:50px;
+	width:100%;
+	text-align:center;
+}
+
+#pokemon-header {
+
+	/*border:1px dotted blue;*/
+
+	width:50%;
+}
+
+
+
+
+
+
+
+
+
+/*	CAUGHT	TYPE	SECOND TYPE	GENERATION      */
+
+		/* SUBMIT  */
+
+
+/* container for form (selects + submit) */
+#form-div {
+
+	/*border:1px solid black;*/
+	border-radius:8px;
+
+	margin-right:auto;
+	margin-left:auto;
+	margin-bottom:0px;
+	padding-bottom:0px;
+	width:100%;
+	text-align:center;
+	display:inline-block;
+}
+
+
+
+
+/* containers for the two separate forms */
+.form-wrapper {
+
+	/*border:2px solid green;*/
+
+	border-radius:10px;
+	display:block;
+	overflow:hidden;
+	opacity:0.5;
+}
+
+.form-wrapper:hover {
+	
+
+	
+}
+
+
+
+
+
+/*	CAUGHT 	TYPE	SECOND TYPE	GENERATION	*/
+
+
+/* container for selects */
+#choices-container {
+
+	/*border:1px dotted blue;*/
+
+	padding-top:0px;
+	padding-bottom:25px;
+	margin-top:30px;
+	margin-bottom:0px;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	display:inline-block;
+}
+
+
+
+
+
+
+
+/* text field for name */
+#name-bar {
+	height:35px;
+}
+
+
+
+
+
+
+
+/*		SUBMIT			*/
+
+
+/* container for submit */
+#submit-container {
+
+	/*border:1px dotted red;*/
+
+	padding:0px;
+	margin-top:0px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:30px;
+	width:100%;
+	float:left;
+}
+
+
+
+
+
+
+
+
+
+
+/*	Here are the Pokemon you haven't caught yet! */
+
+
+/* optional text explaining table on $_GET arrival */
+#explainer {
+
+	/*border:1px solid black;*/
+
+	border-radius:8px;
+	margin-right:auto;
+	margin-left:auto;
+	padding-bottom:35px;
+	width:100%;
+	text-align:center;
+	color:white;
+	font-weight:bold;
+}
+
+
+
+
+
+
+
+
+
+/*	_________________________________
+	|	|	|	|	|
+	|	|	|	|	|
+	|	|	|	|	|
+	________________________________
+	|	|	|	|	|
+	|	|	|	|	|
+	|	|	|	|	|
+	_________________________________
+	|	|	|	|	|
+	|	|	|	|	|
+	...	...	...	...	...
+
+
+
+						*/
+
+
+/* container for whole table */
+#table-div {
+
+	/*border:1px solid black;*/
+
+	margin-right:auto;
+	margin-left:auto;
+	margin-bottom:120px;
+	width:100%;
+	text-align:center;
+	padding:0px;
+}
+
+
+
+
+
+
+
+
+
+
+/*                 THINGS            */
+
+
+
+/* FORM BUTTONS */
+
+/* all form  buttons */
+select {
+	border:1px #696969 solid;
+	border-radius:0px;
+	margin-left:0px;
+	padding-top:10px;
+	
+	padding-bottom:10px;
+	background-color:silver;
+	width:25%;
+	float:left;
+	text-align:center;
+}
+select:hover {
+	background-color:#ffffdd;
+}
+
+
+
+
+/* first button */
+select[name='caughtStatus'] {
+	float:auto;
+}
+
+
+
+/* second button */
+select[name='type'] {
+	float:auto;
+
+}
+
+
+/* third button */
+select[name='type2'] {
+	float:auto;
+}
+
+
+
+/* fourth button */
+select[name='generation'] {
+	float:auto;
+}
+
+
+/* submit button */
+#submit {
+	border:1px #696969 solid;
+	border-radius:0px;
+	padding:10px;
+	margin:0 auto;
+	background-color:silver;
+	width:40%;
+
+}
+
+
+
+
+/*		TABLE		*/
+
+
+/* table itself */
+#pokedex-table {
+	border:1px #696969 solid;
+	border-radius:8px;
+	padding-bottom:20px;
+	background-color:#ffffaa;
+	width:100%;
+	margin:0 auto;
+
+}
+
+
+/* head row */
+#table-head {
+	
+
+}
+
+
+
+/* head cells */
+.head-cell {
+	padding-top:20px;
+	padding-bottom:20px;
+	border:0px solid black;
+}
+
+
+/* whole body */
+#table-body {
+
+
+
+}
+
+
+.table-row {
+	background-color:#ffffaa;
+	height:25px;
+}
+
+
+.table-row:hover {
+	background-color:#ffffdd;
+}
+
+
+/* every cell */
+td {
+	text-align:center;
+	height:50px;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+/* just the caughtStatus cell */
+.cell-div {
+	display:block;
+	height:100%;
+	width:100%;
+}
+
+
+#caughtCell {
+	padding:10px;
+	height:18px;
+}
+
+.fadedPokeball {
+	opacity: 0.3;
+	height:30px;
+}
+
+.opaquePokeball {
+	opacity: 1.0;
+	height:36px;
+}
+
+
+
+#nationalDexCell {
+
+
+}
+
+
+
+.nameCell {
+
+}
+
+.nameCell a {
+	width:100%;
+	height:100%;
+	display:inline-block;
+}
+
+.nameCell a:link {
+	color:black;
+	text-decoration:none;
+}
+
+.nameCell a:visited {
+	color:black;
+	text-decoration:none;
+}
+
+.species-link {
+	/*width:100%;
+	display:block;*/
+}
+
+
+
+#typeCell {
+
+
+}
+
+#footer-row {
+
+	padding-top:0px;
+	padding-bottom:15px;
+	display:inline-block;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+}
+
+.berry-div {
+	display:inline-block;
+	margin-left:27px;
+	float:left;
+}

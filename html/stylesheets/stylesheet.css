@@ -27,7 +27,6 @@ body {
 
 
 #body-div {
-	/* border:3px solid red; */
 	margin-right:auto;
 	margin-left:auto;
 	width:55%;
@@ -43,7 +42,6 @@ body {
 */
 
 #pokemon-header-wrapper {
-	/* border:1px solid black; */
 	margin-right:auto;
 	margin-left:auto;
 	padding-bottom:50px;
@@ -52,7 +50,6 @@ body {
 }
 
 #pokemon-header {
-	/* border:1px dotted blue; */
 	width:50%;
 }
 
@@ -71,7 +68,6 @@ body {
 
 /* container for form (selects + submit) */
 #form-div {
-	/* border:1px solid black; */
 	margin-right:auto;
 	margin-left:auto;
 	margin-bottom:0px;
@@ -94,7 +90,6 @@ body {
 
 /* container for selects */
 #choices-container {
-	/* border:1px dotted blue; */
 	padding-top:0px;
 	padding-bottom:25px;
 	margin-bottom:0px;
@@ -116,7 +111,6 @@ body {
 
 /* container for submit */
 #submit-container {
-	/* border:1px dotted red; */
 	padding:0px;
 	margin-top:0px;
 	margin-left:auto;
@@ -135,7 +129,6 @@ body {
 
 /* optional text explaining table on $_GET arrival */
 #explainer {
-	/* border:1px solid black; */
 	border-radius:8px;
 	margin-right:auto;
 	margin-left:auto;
@@ -174,7 +167,6 @@ body {
 
 /* container for whole table */
 #table-div {
-	/* border:1px solid black; */
 	margin-right:auto;
 	margin-left:auto;
 	margin-bottom:120px;

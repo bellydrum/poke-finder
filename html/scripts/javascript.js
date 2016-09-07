@@ -46,10 +46,45 @@ $(document).ready(function() {
 
 $(document).ready(function() {
         $('.button').mouseenter(function() {
-                $(this).animate({'background-color':'#ffff99', 'letterSpacing':'+=2px', 'fontSize':'+=1px'}, 'fast');
+                $(this).animate({
+			'background-color':'#ffff99',
+			'letterSpacing':'+=2px',
+			'fontSize':'+=1px'
+			}, 'fast');
         });
         $('.button').mouseleave(function() {
-                $(this).animate({'background-color':'silver', 'letterSpacing':'-=2px', 'fontSize':'-=1px'}, 'fast');
+                $(this).animate({
+			'background-color':'silver',
+			'letterSpacing':'-=2px',
+			'fontSize':'-=1px'
+			}, 'fast');
         });
 });
 
+
+
+
+
+
+/* makes hovering over forms look cool */
+
+$(document).ready(function() {
+
+	$('.form-wrapper').mouseenter(function() {
+		$(this).animate({
+			'background-color':'#64c2e2',
+			'opacity':'1',
+			'width':'106%',
+			'fontSize':'+=1px'
+			}, 'fast');
+	});
+
+	$('.form-wrapper').mouseleave(function() {
+		$(this).animate({
+			'background-color':'#2bade2',
+			'opacity':'0.3',
+			'width':'100%',
+			'fontSize':'-=1px'
+			}, 'fast');
+	});
+});
