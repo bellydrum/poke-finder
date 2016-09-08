@@ -1,13 +1,11 @@
 
 /* makes pokeball icon disappear! wow!! */
-
 $(document).ready(function() {
 
 	/* when clicking the pokeball icon, toggle it on and off  */
-
 	$('.pokeball-wrapper').click(function() {
 		$(this).children('img.fadedPokeball').fadeTo('fast', 1.0);
-		$(this).children('img.opaquePokeball').fadeTo('fast', 0.1);
+		$(this).children('img.opaquePokeball').fadeTo('fast', 0.3);
 		$(this).children('img').toggleClass('fadedPokeball opaquePokeball');
 
 	/* then toggle the pokemon's 'caught / uncaught' status in the database */
@@ -31,7 +29,6 @@ $(document).ready(function() {
 
 
 /* makes row removable if not looking at list of all pokemon */
-
 $(document).ready(function() {
 	$('.removable').click(function() {
 		$(this).parent().fadeOut(400);
@@ -43,7 +40,6 @@ $(document).ready(function() {
 
 
 /* makes hovering over buttons look cool */
-
 $(document).ready(function() {
         $('.button').mouseenter(function() {
                 $(this).animate({
@@ -63,25 +59,24 @@ $(document).ready(function() {
 
 
 /* makes hovering over forms look cool */
-
 $(document).ready(function() {
 
 	$('.form-wrapper').mouseenter(function() {
 		$(this).animate({
 			'background-color':'#64c2e2',
 			'opacity':'1',
-			'width':'105%',
-			'fontSize':'+=1px'
+			'width':'105%'
 			}, 'fast');
-		$(this).addClass('expanded');
+		if(!($(this).hasClass('expanded'))) {
+			$(this).addClass('expanded');
+		}
 		if($(this).attr('id') == 'name-wrapper') {
 			if($('#criteria-wrapper').hasClass('expanded')) {
 				$('#criteria-wrapper').removeClass('expanded');
 				$('#criteria-wrapper').animate({
 	                                'background-color':'#2bade2',
         	                        'opacity':'0.3',
-                	                'width':'100%',
-                        	        'fontSize':'-=1px'
+                	                'width':'100%'
                                 	}, 'fast');
 			}
 		}
@@ -91,8 +86,7 @@ $(document).ready(function() {
 				$('#name-wrapper').animate({
                                 	'background-color':'#2bade2',
                         	        'opacity':'0.3',
-                	                'width':'100%',
-        	                        'fontSize':'-=1px'
+                	                'width':'100%'
 	                                }, 'fast');
 			}
 		}
