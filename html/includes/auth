@@ -1,19 +1,12 @@
 <?php
-	// define pdo object parameters
-	$dsn = 'mysql:host=localhost;dbname=pokedex';
-	$username = 'b3llydrum';
-	$password = 'Bittie90';
+	$host = 'localhost';
+	$user = 'b3llydrum';
+	$pass = 'Bittie90';
+	$name = 'pokedex';
 
-	// create pdo object
-	$db = new PDO($dsn, $username, $password);
+	$db = new PDO('mysql:host=localhost;dbname=pokedex', $user, $pass);
+	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	// return all sql requests as UTF-8
-	$db->exec("SET CHARACTER SET utf8");
-
-	// simple printout test
-	if(!$db)
-		print("<strong>There was an error connecting to the database.\n</strong>");
-
-
-
+	// for debugging
+	// echo 'Connected successfully!';
 ?>

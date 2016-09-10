@@ -65,6 +65,10 @@
 		{
 			$statement = "SELECT * FROM pokemon WHERE name = '{$name}';";
 		}
+		else
+		{
+			$statement = "SELECT * FROM pokemon ORDER BY nationalDex;";
+		}
 
 		return $statement;
 	}
@@ -110,19 +114,19 @@
 			}
 
 			// now take each piece of the statement and append to the statement string
-			foreach($statementArray as $i)
+			
+			for($i = 0; $i < count($statementArray); $i++)
 			{
-				if($i != end($statementArray))
-					$statement = $statement . $i . " AND ";
+				if($i != (count($statementArray) - 1))
+					$statement = $statement . $statementArray[$i] . " AND ";
 				else
-					$statement = $statement . $i;
+					$statement = $statement . $statementArray[$i];
 			}
 		}
 
 		// return the resulting statement; empty string if input is empty
 		return $statement;
 	}
-
 
 	// toggles pokemon's caughtStatus between caught and uncaught
 	function updateCaughtStatus($pokemonId)

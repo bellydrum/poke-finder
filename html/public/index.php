@@ -26,7 +26,6 @@
 			$rows = $db->query($selectStatement);
 		}
 
-
 		// if user used the dropdown criteria form
 		else if(isset($_POST['caughtStatus']))
 		{
@@ -44,15 +43,11 @@
 			require('../includes/statements.php');
 
 			// uncomment to see the sql query that generateStatement() is generating
-			// print($selectStatement);
+			//print($selectStatement);
 		}
-
 
 		// pull information from database and store in $rows
 		$rows = $db->query($selectStatement);
-
-
-
 	}
 
 	// if arriving at page via url $_GET method	
@@ -74,5 +69,4 @@
 
 	// close html
 	render("footer");
-
 ?>
