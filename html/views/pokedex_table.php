@@ -92,11 +92,14 @@
 					</td>
 
 					<!-- display pokemon type -->
-					<td id='typeCell'><?php
-						echo $row['type'];
-						if($row['type2'] != 'NULL') {
-							echo " / " . $row['type2'];
-						} ?></td>
+					<td id='typeCell'>
+						<img src="../includes/images/icons/type/<?=strtolower($row['type'])?>.png"/>
+					<?php
+						if($row['type2'] != 'NULL'):
+					?>
+							<img src="../includes/images/icons/type/<?=strtolower($row['type2']);?>.png"/>
+					<?php endif; ?>
+					</td>
 				</tr>
 			</div>
 
