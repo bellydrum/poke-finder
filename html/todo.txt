@@ -6,6 +6,8 @@ TODO:
 	- clear all onscreen
 	- info
 	// all done with ajax
-- create small name + description under pokemon logo
+- create small name + description under pokemon logo accessible via click + ajax
 - fix form divs expansion animation
-
+- make name field able to search dex number
+- make table row hover look prettier
+- 
