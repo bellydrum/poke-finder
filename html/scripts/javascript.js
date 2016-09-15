@@ -64,8 +64,7 @@ $(document).ready(function() {
 	$('.form-wrapper').mouseenter(function() {
 		$(this).animate({
 			'background-color':'#64c2e2',
-			'opacity':'1',
-			'width':'105%'
+			'opacity':'1'
 			}, 'fast');
 		if(!($(this).hasClass('expanded'))) {
 			$(this).addClass('expanded');
@@ -75,9 +74,8 @@ $(document).ready(function() {
 				$('#criteria-wrapper').removeClass('expanded');
 				$('#criteria-wrapper').animate({
 	                                'background-color':'#2bade2',
-        	                        'opacity':'0.3',
-                	                'width':'100%'
-                                	}, 'fast');
+        	                        'opacity':'0.3'
+                                	}, 30);
 			}
 		}
 		if($(this).attr('id') == 'criteria-wrapper') {
@@ -85,9 +83,8 @@ $(document).ready(function() {
 				$('#name-wrapper').removeClass('expanded');
 				$('#name-wrapper').animate({
                                 	'background-color':'#2bade2',
-                        	        'opacity':'0.3',
-                	                'width':'100%'
-	                                }, 'fast');
+                        	        'opacity':'0.3'
+	                                }, 30);
 			}
 		}
 	});

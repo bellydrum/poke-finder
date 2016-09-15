@@ -8,6 +8,7 @@
 body {
 	background-image:url('../includes/images/wallpaper.png');
 	background-attachment:fixed;
+	text-align:center;
 }
 
 
@@ -39,6 +40,36 @@ body {
 }
 
 
+/*
+						login page
+*/
+
+#login-form-wrapper {
+	
+	border:1px solid black;
+
+	display:inline-block;
+	text-align:center;
+	margin-top:25px;
+	margin-bottom:0px;
+}
+
+.login-input-div {
+	padding-top:10px;
+	padding-bottom:10px;
+	border:1px dotted red;
+}
+
+#login-username-div {
+}
+#login-password-div {
+}
+#login-submit-div {
+
+}
+
+
+
 
 /*
 		POKEMON
@@ -67,18 +98,30 @@ body {
 
 	border:1px solid black;
 
-	text-align:center;
+	border-radius:8px;
+	background-color:#ffffaa;
+	margin-top:16px;
+	margin-bottom:16px;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-weight:bold;
 }
 
 #about-wrapper {
 
 	border:1px dotted green;
+
+	margin-bottom:5px;
 }
-
-
 #logout-wrapper {
 
 	border:1px dotted red;
+
+	margin-top:5px;
+}
+
+#info-wrapper {
+
 }
 
 #about-link {
@@ -229,6 +272,7 @@ body {
 	border:1px solid black;
 
 	border-radius:8px;
+	background-color:#ffffaa;
 	margin-top:15px;
 	margin-right:auto;
 	margin-left:auto;
@@ -236,7 +280,7 @@ body {
 	padding-bottom:16px;
 	width:100%;
 	text-align:center;
-	color:white;
+	color:black;
 	font-weight:bold;
 }
 

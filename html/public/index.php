@@ -7,11 +7,6 @@
 	// if not logged in, redirect to login page
 	if(!isset($_SESSION['username']))
 		header('Location: login.php');
-	else
-	{
-		print_r('Username: ' . $_SESSION['username'] . '  ');
-		print_r('Login is ' . $_SESSION['loggedIn']);
-	}
 
 	// custom functions are found in '../includes/helpers.php'
 	// this is imported by config.php

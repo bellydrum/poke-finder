@@ -43,11 +43,11 @@
 		}
 		else
 		{
-			print("Fuck@!");
+			print("<div id='warning'>Incorrect username or password.</div>");
 		}
 	}
 
 	render('login_form');
-
+	render('register_request');
 
 ?>

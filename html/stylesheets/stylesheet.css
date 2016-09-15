@@ -8,6 +8,7 @@
 body {
 	background-image:url('../includes/images/wallpaper.png');
 	background-attachment:fixed;
+	text-align:center;
 }
 
 
@@ -28,7 +29,7 @@ body {
 
 #body-div {
 
-	/* border:3px solid red; */
+	/*border:3px solid red;*/
 
 	margin-right:auto;
 	margin-left:auto;
@@ -37,6 +38,49 @@ body {
 
 
 }
+
+
+/*
+						login page
+*/
+
+#login-form-wrapper {
+	
+	/*border:1px solid black;*/
+
+	display:inline-block;
+	text-align:center;
+	margin-top:25px;
+	margin-bottom:60px;
+}
+
+.login-input-div {
+
+	/*border:1px dotted red;*/
+
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+#login-username-div {
+}
+#login-password-div {
+}
+#login-submit-div {
+
+}
+#warning {
+	padding-top:30px;
+}
+
+
+
+/*
+				register
+*/
+
+
+
 
 
 
@@ -65,20 +109,33 @@ body {
 
 #header-menu-wrapper {
 
-	/*border:1px solid black;*/
+	/* keep this */
+	border:1px solid black;
 
-	text-align:center;
+	border-radius:8px;
+	background-color:#ffffaa;
+	margin-top:16px;
+	margin-bottom:16px;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-weight:bold;
 }
 
 #about-wrapper {
 
 	/*border:1px dotted green;*/
+
+	margin-bottom:5px;
 }
-
-
 #logout-wrapper {
 
 	/*border:1px dotted red;*/
+
+	margin-top:5px;
+}
+
+#info-wrapper {
+
 }
 
 #about-link {
@@ -89,12 +146,21 @@ body {
 	text-decoration:none;
 }
 
+#register-link {
+	text-decoration:none;
+}
+
 #about-link:visited {
 	color:black;
 	text-decoration:none;
 }
 
 #logout-link:visited {
+	color:black;
+	text-decoration:none;
+}
+
+#register-link:visited {
 	color:black;
 	text-decoration:none;
 }
@@ -131,7 +197,7 @@ body {
 
 #name-wrapper {
 
-	/*border:2px solid green;*/
+        /*border:2px solid green;*/
 
         border-radius:10px;
         display:block;
@@ -143,7 +209,7 @@ body {
 
 #criteria-wrapper {
 
-	/*border:2px solid green;*/
+        /*border:2px solid green;*/
 
         border-radius:10px;
         display:block;
@@ -170,9 +236,9 @@ body {
 	/*border:1px dotted blue;*/
 
 	padding-top:0px;
-	padding-bottom:25px;
+	padding-bottom:0px;
 	margin-top:30px;
-	margin-bottom:0px;
+	margin-bottom:25px;
 	margin-left:auto;
 	margin-right:auto;
 	width:100%;
@@ -228,9 +294,10 @@ body {
 /* optional text explaining table on $_GET arrival */
 #explainer {
 
-	/*border:1px solid black;*/
+	border:1px solid black;
 
 	border-radius:8px;
+	background-color:#ffffaa;
 	margin-top:15px;
 	margin-right:auto;
 	margin-left:auto;
@@ -238,7 +305,7 @@ body {
 	padding-bottom:16px;
 	width:100%;
 	text-align:center;
-	color:white;
+	color:black;
 	font-weight:bold;
 }
 
