@@ -61,13 +61,13 @@
 		// initialize statement to an empty string
 		$statement = "";
 
-		if($name)
+		if(!is_numeric($name))
 		{
 			$statement = "SELECT * FROM pokemon WHERE name = '{$name}';";
 		}
 		else
 		{
-			$statement = "SELECT * FROM pokemon ORDER BY nationalDex;";
+			$statement = "SELECT * FROM pokemon WHERE nationalDex = {$name};";
 		}
 
 		return $statement;

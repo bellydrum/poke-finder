@@ -1,28 +1,38 @@
 <?php
+	session_start();
+
+
+	// page setup
+
+	// if not logged in, redirect to login page
+	if(!isset($_SESSION['username']))
+		header('Location: login.php');
+	else
+	{
+		print_r('Username: ' . $_SESSION['username'] . '  ');
+		print_r('Login is ' . $_SESSION['loggedIn']);
+	}
+
 	// custom functions are found in '../includes/helpers.php'
 	// this is imported by config.php
 	require('../includes/config.php');
-	
-	// generate base html
+
+	// render page
 	render('header', ['title'=>"Pokemon Finder"]);
-
-	// render pokemon header
 	render('pokemon_logo');
-
-	// generate search form
 	render('pokedex_form');
+
+
+	// generate page data
 
 	// if arriving at page via form submit $_POST method
 	if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
-
 		// if user used the name text field form
 		if(isset($_POST['name']))
 		{
 			$name = $_POST['name'];
-
 			$selectStatement = generateNameStatement($name);
-
 			$rows = $db->query($selectStatement);
 		}
 
@@ -49,7 +59,6 @@
 		// pull information from database and store in $rows
 		$rows = $db->query($selectStatement);
 	}
-
 	// if arriving at page via url $_GET method	
 	else if($_SERVER['REQUEST_METHOD'] == 'GET')
 	{
@@ -60,12 +69,15 @@
 		$rows = $db->query("SELECT * FROM pokemon WHERE caughtStatus = 'uncaught';");
 	}
 
-	// never show an empty table
+	
+	// table generation
+
 	if(isset($rows))
 	{
 		// generate table using query results
 		require('../views/pokedex_table.php');
 	}
+
 
 	// close html
 	render("footer");
