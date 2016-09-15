@@ -20,6 +20,7 @@
 	// render page
 	render('header', ['title'=>"Pokemon Finder"]);
 	render('pokemon_logo');
+	render('header_menu');
 	render('pokedex_form');
 
 

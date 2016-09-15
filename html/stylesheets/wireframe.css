@@ -63,9 +63,38 @@ body {
 }
 
 
+#header-menu-wrapper {
+
+	border:1px solid black;
+	text-align:center;
+}
+
+#about-wrapper {
+	border:1px solid green;
+}
 
 
+#logout-wrapper {
+	border:1px dotted red;
+}
 
+#about-link {
+	text-decoration:none;
+}
+
+#logout-link {
+	text-decoration:none;
+}
+
+#about-link:visited {
+	color:black;
+	text-decoration:none;
+}
+
+#logout-link:visited {
+	color:black;
+	text-decoration:none;
+}
 
 
 
