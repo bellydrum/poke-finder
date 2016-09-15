@@ -1,5 +1,7 @@
 TODO:
 
+design
+
 - add side column with
 	- caught / uncaught count
 	- catch all onscreen
@@ -7,7 +9,12 @@ TODO:
 	- info
 	// all done with ajax
 - create small name + description under pokemon logo accessible via click + ajax
+- create logout button
 - fix form divs expansion animation
-- make name field able to search dex number
 - make table row hover look prettier
-- 
+
+
+logic
+
+- make shown pokemon pull from pokemon where name not in user_pokemon
+- make clicking pokeball insert/delete from user_pokemon
