@@ -15,7 +15,6 @@
 	// if entering web page via url
 	if($_SERVER['REQUEST_METHOD'] == "GET")
 	{
-		render('login_form');
 	}
 
 
@@ -47,6 +46,8 @@
 			print("Fuck@!");
 		}
 	}
+
+	render('login_form');
 
 
 ?>

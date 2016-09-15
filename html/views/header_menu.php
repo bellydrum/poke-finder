@@ -3,7 +3,7 @@
 		<a href='' id='about-link'>About</a>
 	</div>
 	<div id='logout-wrapper'>
-		<a href='../public/logout.php' id='logout-link'>Logout</a>
+		<a href='../public/logout.php' id='logout-link'>Log out</a>
 	</div>
 
 
