@@ -16,5 +16,6 @@ design
 
 logic
 
+- fix database updating in /helpers/
 - make shown pokemon pull from pokemon where name not in user_pokemon
 - make clicking pokeball insert/delete from user_pokemon

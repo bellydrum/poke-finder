@@ -39,7 +39,7 @@
 			$statement2 = $db->prepare("INSERT INTO user_extra (first_name, last_name, email, zip_code, signature) VALUES(:firstName, :lastName, :email, :zipCode, :signature);");
 			$statement2->bindParam(':firstName', $firstName);
 			$statement2->bindParam(':lastName', $lastName);
-			$statement2->bindValue(':email', password_hash($email, PASSWORD_DEFAULT));
+			$statement2->bindValue(':email', $email);
 			$statement2->bindParam(':zipCode', $zipCode);
 			$statement2->bindParam(':signature', $signature);
 
