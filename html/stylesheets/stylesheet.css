@@ -60,6 +60,7 @@ body {
 
 	padding-top:10px;
 	padding-bottom:10px;
+	height:35px;
 }
 
 #login-username-div {
@@ -79,7 +80,13 @@ body {
 				register
 */
 
+#register-form-wrapper {
+	margin-bottom:30px;
+}
 
+.wireframe {
+	border:1px dotted red;
+}
 
 
 
@@ -252,7 +259,7 @@ body {
 
 
 /* text field for name */
-#name-bar {
+.input-bar {
 	height:35px;
 }
 
