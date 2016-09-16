@@ -10,9 +10,13 @@
 	// if entering web page via url
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
-		// if any of the required form inputs are empty
-		if($_POST['firstName'] != '' && $_POST['lastName'] != '' && $_POST['username'] != '' &&
-			$_POST['password'] != '' && $_POST['confirmation'] != '' && $_POST['email'] != '')
+		// if all required fields are filled out
+		if($_POST['firstName'] != '' &&
+		   $_POST['lastName'] != '' &&
+		   $_POST['username'] != '' &&
+		   $_POST['password'] != '' &&
+		   $_POST['confirmation'] != '' &&
+		   $_POST['email'] != '')
 		{
 
 			// store user inputs in variables
@@ -22,6 +26,7 @@
 			$password = $_POST['password'];
 			$confirmation = $_POST['confirmation'];
 			$email = $_POST['email'];
+			// non-required; may leave empty
 			if($_POST['zipCode'] != '')
 				$zipCode = $_POST['zipCode'];
 			else
@@ -31,12 +36,19 @@
 			else
 				$signature = 'No signature';
 
-			// generate two prepared statements, one for each user table
-			// alert user if user already exists
-			$statement1 = $db->prepare("INSERT INTO user (username, password) VALUES(:username, :password);");
+			// generate two prepared statements, one for pokedex.user and one for pokedex.user_extra
+			$statement1 = $db->prepare("INSERT INTO user
+						   (username, password)
+						   VALUES
+						   (:username, :password);"
+						  );
 			$statement1->bindParam(':username', $username);
 			$statement1->bindValue(':password', password_hash($password, PASSWORD_DEFAULT));
-			$statement2 = $db->prepare("INSERT INTO user_extra (first_name, last_name, email, zip_code, signature) VALUES(:firstName, :lastName, :email, :zipCode, :signature);");
+			$statement2 = $db->prepare("INSERT INTO user_extra
+						   (first_name, last_name, email, zip_code, signature)
+						   VALUES
+						   (:firstName, :lastName, :email, :zipCode, :signature);"
+						  );
 			$statement2->bindParam(':firstName', $firstName);
 			$statement2->bindParam(':lastName', $lastName);
 			$statement2->bindValue(':email', $email);
@@ -44,33 +56,40 @@
 			$statement2->bindParam(':signature', $signature);
 
 
-			// TODO: make some sort of catcher for the case where username already exists
-			$usernameCheckerStatement = $db->prepare("SELECT * FROM user WHERE username = :username;");
+			// check if user already exists in the database
+			$usernameCheckerStatement = $db->prepare("SELECT *
+								 FROM user
+								 WHERE username = :username;"
+								);
 			$usernameCheckerStatement->bindParam(':username', $username);
 			$rows = $usernameCheckerStatement->execute();
-
 			$rows = $usernameCheckerStatement->fetch(PDO::FETCH_ASSOC);
 
+			// if the username check comes back empty
 			if(!$rows['username'])
 			{
-				// if the new user insertion goes without error
+				// and if inserting the new user goes without error
                 		if($statement1->execute() && $statement2->execute())
                 		{
                         		// create session globals
 					$_SESSION['username'] = $username;
 					$_SESSION['loggedIn'] = true;
 
-                        		// redirect user to pokedex
+                        		// redirect logged in user to homepage
 					header('Location: index.php');
                 		}
 			}
+			// or if the username check pulls back a matching username already in the system
 			else
 				print("<div class='warning'>That username already exists!</div>");
 		}
+		// or if there are required fields left empty
 		else
 		{
+			// if the password and confirmation fields do not match, alert user
 			if($_POST['password'] != $_POST['confirmation'])
 				print("<div class='warning'>Your passwords do not match!</div>");
+			// if they do match and there are required fields left empty, alert user
 			else
 				print("<div class='warning'>Please fill out all the fields.</div>");
 		}
