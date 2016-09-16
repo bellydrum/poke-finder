@@ -1,6 +1,4 @@
 <div id='register-form-wrapper'>
-	
-
 	<form action='' method='post'>
 		<div class='login-input-div'>
 			<input name='firstName' type='text' placeholder="What's your first name?" class='input-bar'/>
@@ -29,20 +27,5 @@
 		<div class='login-input-div'>
 			<input type='submit' value='Create my Pokedex!' id='submit' class='button'/>
 		</div>
-
-
-
-
-
 	</form>
-
-
-
-
-
-
-
-
-
-
 </div>

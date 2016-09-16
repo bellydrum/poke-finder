@@ -29,7 +29,7 @@ body {
 
 #body-div {
 
-	border:3px solid red;
+	/*border:3px solid red;*/
 
 	margin-right:auto;
 	margin-left:auto;
@@ -46,18 +46,21 @@ body {
 
 #login-form-wrapper {
 	
-	border:1px solid black;
+	/*border:1px solid black;*/
 
 	display:inline-block;
 	text-align:center;
 	margin-top:25px;
-	margin-bottom:0px;
+	margin-bottom:60px;
 }
 
 .login-input-div {
+
+	/*border:1px dotted red;*/
+
 	padding-top:10px;
 	padding-bottom:10px;
-	border:1px dotted red;
+	height:35px;
 }
 
 #login-username-div {
@@ -66,6 +69,23 @@ body {
 }
 #login-submit-div {
 
+}
+#warning {
+	padding-top:30px;
+}
+
+
+
+/*
+				register
+*/
+
+#register-form-wrapper {
+	margin-bottom:30px;
+}
+
+.wireframe {
+	border:1px dotted red;
 }
 
 
@@ -77,7 +97,7 @@ body {
 
 #pokemon-header-wrapper {
 
-	border:1px solid black;
+	/*border:1px solid black;*/
 
 	margin-right:auto;
 	margin-left:auto;
@@ -88,7 +108,7 @@ body {
 
 #pokemon-header {
 
-	border:1px dotted blue;
+	/*border:1px dotted blue;*/
 
 	width:50%;
 }
@@ -96,6 +116,7 @@ body {
 
 #header-menu-wrapper {
 
+	/* keep this */
 	border:1px solid black;
 
 	border-radius:8px;
@@ -109,13 +130,13 @@ body {
 
 #about-wrapper {
 
-	border:1px dotted green;
+	/*border:1px dotted green;*/
 
 	margin-bottom:5px;
 }
 #logout-wrapper {
 
-	border:1px dotted red;
+	/*border:1px dotted red;*/
 
 	margin-top:5px;
 }
@@ -132,12 +153,21 @@ body {
 	text-decoration:none;
 }
 
+#register-link {
+	text-decoration:none;
+}
+
 #about-link:visited {
 	color:black;
 	text-decoration:none;
 }
 
 #logout-link:visited {
+	color:black;
+	text-decoration:none;
+}
+
+#register-link:visited {
 	color:black;
 	text-decoration:none;
 }
@@ -153,9 +183,9 @@ body {
 /* container for form (selects + submit) */
 #form-div {
 
-	border:1px solid black;
-	border-radius:8px;
+	/*border:1px solid black;*/
 
+	border-radius:8px;
 	margin-right:auto;
 	margin-left:auto;
 	margin-bottom:0px;
@@ -173,7 +203,8 @@ body {
 /* containers for the two separate forms */
 
 #name-wrapper {
-        border:2px solid green;
+
+        /*border:2px solid green;*/
 
         border-radius:10px;
         display:block;
@@ -184,7 +215,8 @@ body {
 }
 
 #criteria-wrapper {
-        border:2px solid green;
+
+        /*border:2px solid green;*/
 
         border-radius:10px;
         display:block;
@@ -208,7 +240,7 @@ body {
 /* container for selects */
 #choices-container {
 
-	border:1px dotted blue;
+	/*border:1px dotted blue;*/
 
 	padding-top:0px;
 	padding-bottom:0px;
@@ -227,7 +259,7 @@ body {
 
 
 /* text field for name */
-#name-bar {
+.input-bar {
 	height:35px;
 }
 
@@ -243,7 +275,7 @@ body {
 /* container for submit */
 #submit-container {
 
-	border:1px dotted red;
+	/*border:1px dotted red;*/
 
 	padding:0px;
 	margin-top:0px;
@@ -313,7 +345,7 @@ body {
 /* container for whole table */
 #table-div {
 
-	border:1px solid black;
+	/*border:1px solid black;*/
 
 	margin-top:15px;
 	margin-right:auto;

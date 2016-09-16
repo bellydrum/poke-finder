@@ -1,13 +1,13 @@
 <div id='header-menu-wrapper'>
-	<div id='about-wrapper'>
-		<a href='' id='about-link'>About Poke-Finder</a>
-	</div>
-	<div id='logout-wrapper'>
-		<a href='../public/logout.php' id='logout-link'>Log out</a>
-	</div>
+	<a href='collection.php' class='link'>
+		<div id='collection-wrapper' class='header-button-wrapper'>
+			<?=ucfirst($_SESSION['username']);?>'s Collection
+		</div>
+	</a>
 
-
-
-
-
+	<a href='../public/logout.php' class='link'>
+		<div id='logout-wrapper' class='header-button-wrapper'>
+			Log out
+		</div>
+	</a>
 </div>

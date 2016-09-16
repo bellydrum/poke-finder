@@ -5,7 +5,7 @@
         <form action='' method='POST' id='name_form'>
 
                 <div id='choices-container'>
-                        <input type='text' name='name' id='name-bar' autocomplete='on' placeholder="Search for a Pokemon here">
+                        <input type='text' name='name' class='input-bar' autocomplete='on' placeholder="Search for a Pokemon here">
                 </div>
 
                 <div id='submit-container'>

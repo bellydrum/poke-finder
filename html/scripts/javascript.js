@@ -25,9 +25,6 @@ $(document).ready(function() {
 });
 
 
-
-
-
 /* makes row removable if not looking at list of all pokemon */
 $(document).ready(function() {
 	$('.removable').click(function() {
@@ -36,36 +33,29 @@ $(document).ready(function() {
 });
 
 
-
-
-
 /* makes hovering over buttons look cool */
 $(document).ready(function() {
         $('.button').mouseenter(function() {
                 $(this).animate({
 			'background-color':'#ffff99'
-			}, 'fast');
+			}, 75);
         });
         $('.button').mouseleave(function() {
                 $(this).animate({
 			'background-color':'silver'
-			}, 'fast');
+			}, 75);
         });
 });
 
 
-
-
-
-
 /* makes hovering over forms look cool */
-$(document).ready(function() {
+$('.form-wrapper').ready(function() {
 
 	$('.form-wrapper').mouseenter(function() {
 		$(this).animate({
 			'background-color':'#64c2e2',
 			'opacity':'1'
-			}, 'fast');
+			}, 75);
 		if(!($(this).hasClass('expanded'))) {
 			$(this).addClass('expanded');
 		}
@@ -89,3 +79,23 @@ $(document).ready(function() {
 		}
 	});
 });
+
+
+$('.header-button-wrapper').ready(function() {
+
+	$('.header-button-wrapper').mouseenter(function() {
+		$(this).animate({
+			'background-color':'#64c2e2',
+			'opacity':'1'
+			}, 75);
+	});
+	$('.header-button-wrapper').mouseleave(function() {
+		$(this).animate({
+			'background-color':'#2bade2',
+			'opacity':'0.3'
+			}, 75);
+	});
+});
+
+
+

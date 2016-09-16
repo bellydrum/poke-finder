@@ -82,4 +82,7 @@
 	// insert the link button to login page
 	render('login_request');
 
+	// close html and add javascript
+	render('footer');
+
 ?>

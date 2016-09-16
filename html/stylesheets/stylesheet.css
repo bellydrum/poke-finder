@@ -1,9 +1,4 @@
 
-
-
-
-
-
 /* here's the wallpaper */
 body {
 	background-image:url('../includes/images/wallpaper.png');
@@ -12,18 +7,7 @@ body {
 }
 
 
-
-
-
-
-
-
-
 /*        CONTAINERS       */
-
-
-
-
 
 
 
@@ -116,40 +100,52 @@ body {
 
 #header-menu-wrapper {
 
-	/* keep this */
-	border:1px solid black;
+	/*border:1px dotted red;*/
 
-	border-radius:8px;
-	background-color:#ffffaa;
+	border-radius:0px;
 	margin-top:16px;
 	margin-bottom:16px;
-	padding-top:10px;
-	padding-bottom:10px;
 	font-weight:bold;
+	overflow:hidden;
 }
 
-#about-wrapper {
+.header-button-wrapper {
+}
+
+#collection-wrapper {
 
 	/*border:1px dotted green;*/
 
-	margin-bottom:5px;
+	border-radius:8px;
+	width:48%;
+	padding-top:18px;
+	padding-bottom:18px;
+	float:left;
+	opacity:0.3;
 }
 #logout-wrapper {
 
 	/*border:1px dotted red;*/
 
-	margin-top:5px;
+	border-radius:8px;
+	width:48%;
+	padding-top:18px;
+	padding-bottom:18px;
+	float:right;
+	overflow:hidden;
+	opacity:0.3;
 }
 
 #info-wrapper {
 
 }
 
-#about-link {
+a {
+	color:#0f5570;
 	text-decoration:none;
 }
-
-#logout-link {
+a:visited {
+	color:#0f5570;
 	text-decoration:none;
 }
 
@@ -385,6 +381,7 @@ select {
 }
 select:hover {
 	background-color:#ffffdd;
+
 }
 
 
