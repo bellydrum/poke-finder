@@ -62,7 +62,7 @@
 								 WHERE username = :username;"
 								);
 			$usernameCheckerStatement->bindParam(':username', $username);
-			$rows = $usernameCheckerStatement->execute();
+			$usernameCheckerStatement->execute();
 			$rows = $usernameCheckerStatement->fetch(PDO::FETCH_ASSOC);
 
 			// if the username check comes back empty

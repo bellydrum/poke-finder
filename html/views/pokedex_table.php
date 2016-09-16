@@ -65,7 +65,7 @@
 									echo "class='fadedPokeball'";
 								}
 
-								echo " id='{$row["nationalDex"]}'/>";
+								echo " id='{$row["name"]}'/>";
 							?>
 					</td>
 
