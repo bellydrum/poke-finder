@@ -46,17 +46,16 @@
 								    ($_SERVER['REQUEST_METHOD'] == 'GET'))
 									print( " removable");
 							}
-								print("'>");
-								echo "<img src='../includes/images/pokeball.png' ";
 
-								if($row['caughtStatus'] == "caught") {
-									echo "class='opaquePokeball'";
-								}
-								else if($row['caughtStatus'] == 'uncaught') {
-									echo "class='fadedPokeball'";
-								}
+							echo "'>";
+							echo "<img src='../includes/images/pokeball.png' ";
 
-								echo " id='{$row["name"]}'/>";
+							if(in_array($row['name'], $caughtPokemon))
+								echo "class='opaquePokeball'";
+							else if(!in_array($row['name'], $caughtPokemon))
+								echo "class='fadedPokeball'";
+
+							echo " id='{$row["name"]}'/>";
 							?>
 					</td>
 

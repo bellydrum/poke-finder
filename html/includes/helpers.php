@@ -94,7 +94,11 @@
 			// if user input exists, add to the statement array
 			if($caughtStatus != "")
 			{
-				$caughtStatusStatement = "caughtStatus = '{$caughtStatus}'";
+				if($caughtStatus == 'caught')
+					$caughtStatusStatement = "(pokemon.name IN (SELECT pokemon FROM user_pokemon))";
+				else if($caughtStatus == 'uncaught')
+					$caughtStatusStatement = "(pokemon.name NOT IN (SELECT pokemon FROM user_pokemon))";
+
 				array_push($statementArray, $caughtStatusStatement);
 			}
 			if($type != "")
@@ -109,7 +113,7 @@
 			}
 			if($genStart != "" && $genEnd != "")
 			{
-				$genStartStatement = "nationalDex >= {$genStart} AND nationalDex <= {$genEnd}";
+				$genStartStatement = "(nationalDex >= {$genStart} AND nationalDex <= {$genEnd})";
 				array_push($statementArray, $genStartStatement);
 			}
 
