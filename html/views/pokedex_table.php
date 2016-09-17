@@ -24,8 +24,7 @@
 		<!-- loop through each returned data row from the sql query
 		     and build a table row out of each piece of information -->
 
-		<?php
-			
+		<?php	
 			// run the following code for each resulting row from the sql query
 			foreach($rows as $row):
 
@@ -43,17 +42,9 @@
 
 							if(isset($_POST['caughtStatus']))
 							{
-								if
-								(
-									(
-										($_SERVER['REQUEST_METHOD'] == 'POST')
-										&&
-										($_POST['caughtStatus'] != '')
-									)
-									||
-									($_SERVER['REQUEST_METHOD'] == 'GET')
-								)
-										print( " removable");
+								if((($_SERVER['REQUEST_METHOD'] == 'POST') && ($_POST['caughtStatus'] != '')) ||
+								    ($_SERVER['REQUEST_METHOD'] == 'GET'))
+									print( " removable");
 							}
 								print("'>");
 								echo "<img src='../includes/images/pokeball.png' ";

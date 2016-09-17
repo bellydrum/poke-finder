@@ -61,8 +61,8 @@
 		// insert text explaining table of uncaught pokemon
 		//require('../views/explainer.php');
 
-		// pull all uncaught pokemon from database
-		$rows = $db->query("SELECT * FROM pokemon WHERE caughtStatus = 'uncaught';");
+		// pull all uncaught pokemon from user_pokemon table
+		$rows = $db->query("SELECT * FROM pokemon WHERE pokemon.name NOT IN (SELECT pokemon FROM user_pokemon);");
 	}
 
 	
