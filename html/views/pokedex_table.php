@@ -24,8 +24,7 @@
 		<!-- loop through each returned data row from the sql query
 		     and build a table row out of each piece of information -->
 
-		<?php
-			
+		<?php	
 			// run the following code for each resulting row from the sql query
 			foreach($rows as $row):
 
@@ -40,28 +39,23 @@
 
 					<!-- opaque pokeball png if caught; faded image if uncaught -->
 					<td class='pokeball-wrapper<?php
-									if
-									(
-										(
-											($_SERVER['REQUEST_METHOD'] == 'POST')
-											&&
-											($_POST['caughtStatus'] != '')
-										)
-										||
-										($_SERVER['REQUEST_METHOD'] == 'GET')
-									)
-											print( " removable");
-								print("'>");
-								echo "<img src='../includes/images/pokeball.png' ";
 
-								if($row['caughtStatus'] == "caught") {
-									echo "class='opaquePokeball'";
-								}
-								else if($row['caughtStatus'] == 'uncaught') {
-									echo "class='fadedPokeball'";
-								}
+							if(isset($_POST['caughtStatus']))
+							{
+								if((($_SERVER['REQUEST_METHOD'] == 'POST') && ($_POST['caughtStatus'] != '')) ||
+								    ($_SERVER['REQUEST_METHOD'] == 'GET'))
+									print( " removable");
+							}
 
-								echo " id='{$row["nationalDex"]}'/>";
+							echo "'>";
+							echo "<img src='../includes/images/pokeball.png' ";
+
+							if(in_array($row['name'], $caughtPokemon))
+								echo "class='opaquePokeball'";
+							else if(!in_array($row['name'], $caughtPokemon))
+								echo "class='fadedPokeball'";
+
+							echo " id='{$row["name"]}'/>";
 							?>
 					</td>
 
@@ -88,11 +82,14 @@
 					</td>
 
 					<!-- display pokemon type -->
-					<td id='typeCell'><?php
-						echo $row['type'];
-						if($row['type2'] != 'NULL') {
-							echo " / " . $row['type2'];
-						} ?></td>
+					<td id='typeCell'>
+						<img src="../includes/images/icons/type/<?=strtolower($row['type'])?>.png"/>
+					<?php
+						if($row['type2'] != 'NULL'):
+					?>
+							<img src="../includes/images/icons/type/<?=strtolower($row['type2']);?>.png"/>
+					<?php endif; ?>
+					</td>
 				</tr>
 			</div>
 

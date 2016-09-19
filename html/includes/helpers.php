@@ -46,15 +46,39 @@
 				$start = 650;
 				$end = 721;
 				break;
-			case 7:
-				$start = 722;
-				$end = 772;
 			default:
 				$start = "";
 				$end = "";
 		}
 
 		return array($start, $end);
+	}
+
+
+	// creates sql statement from name text field form
+	function generateNameStatement($name)
+	{
+		// initialize statement to an empty string
+		$statement = "";
+
+		// if input is not a number
+		if(!is_numeric($name))
+		{
+
+			// and it's not blank
+			if($name != '')
+				$statement = "SELECT * FROM pokemon WHERE name = '{$name}';";
+
+			// if input is blank
+			else
+				$statement = "SELECT * FROM pokemon ORDER BY nationalDex;";
+		}
+		// if input is a number
+		else
+		{
+			$statement = "SELECT * FROM pokemon WHERE nationalDex = {$name};";
+		}
+		return $statement;
 	}
 
 
@@ -78,7 +102,11 @@
 			// if user input exists, add to the statement array
 			if($caughtStatus != "")
 			{
-				$caughtStatusStatement = "caughtStatus = '{$caughtStatus}'";
+				if($caughtStatus == 'caught')
+					$caughtStatusStatement = "(pokemon.name IN (SELECT pokemon FROM user_pokemon WHERE username = '{$_SESSION['username']}'))";
+				else if($caughtStatus == 'uncaught')
+					$caughtStatusStatement = "(pokemon.name NOT IN (SELECT pokemon FROM user_pokemon WHERE username = '{$_SESSION['username']}'))";
+
 				array_push($statementArray, $caughtStatusStatement);
 			}
 			if($type != "")
@@ -93,17 +121,18 @@
 			}
 			if($genStart != "" && $genEnd != "")
 			{
-				$genStartStatement = "nationalDex >= {$genStart} AND nationalDex <= {$genEnd}";
+				$genStartStatement = "(nationalDex >= {$genStart} AND nationalDex <= {$genEnd})";
 				array_push($statementArray, $genStartStatement);
 			}
 
 			// now take each piece of the statement and append to the statement string
-			foreach($statementArray as $i)
+			
+			for($i = 0; $i < count($statementArray); $i++)
 			{
-				if($i != end($statementArray))
-					$statement = $statement . $i . " AND ";
+				if($i != (count($statementArray) - 1))
+					$statement = $statement . $statementArray[$i] . " AND ";
 				else
-					$statement = $statement . $i;
+					$statement = $statement . $statementArray[$i];
 			}
 		}
 
@@ -111,6 +140,7 @@
 		return $statement;
 	}
 
+	// toggles pokemon's caughtStatus between caught and uncaught
 	function updateCaughtStatus($pokemonId)
 	{
 		$newCaughtStatus;
