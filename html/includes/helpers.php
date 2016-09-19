@@ -61,15 +61,23 @@
 		// initialize statement to an empty string
 		$statement = "";
 
+		// if input is not a number
 		if(!is_numeric($name))
 		{
-			$statement = "SELECT * FROM pokemon WHERE name = '{$name}';";
+
+			// and it's not blank
+			if($name != '')
+				$statement = "SELECT * FROM pokemon WHERE name = '{$name}';";
+
+			// if input is blank
+			else
+				$statement = "SELECT * FROM pokemon ORDER BY nationalDex;";
 		}
+		// if input is a number
 		else
 		{
 			$statement = "SELECT * FROM pokemon WHERE nationalDex = {$name};";
 		}
-
 		return $statement;
 	}
 
@@ -94,7 +102,11 @@
 			// if user input exists, add to the statement array
 			if($caughtStatus != "")
 			{
-				$caughtStatusStatement = "caughtStatus = '{$caughtStatus}'";
+				if($caughtStatus == 'caught')
+					$caughtStatusStatement = "(pokemon.name IN (SELECT pokemon FROM user_pokemon WHERE username = '{$_SESSION['username']}'))";
+				else if($caughtStatus == 'uncaught')
+					$caughtStatusStatement = "(pokemon.name NOT IN (SELECT pokemon FROM user_pokemon WHERE username = '{$_SESSION['username']}'))";
+
 				array_push($statementArray, $caughtStatusStatement);
 			}
 			if($type != "")
@@ -109,7 +121,7 @@
 			}
 			if($genStart != "" && $genEnd != "")
 			{
-				$genStartStatement = "nationalDex >= {$genStart} AND nationalDex <= {$genEnd}";
+				$genStartStatement = "(nationalDex >= {$genStart} AND nationalDex <= {$genEnd})";
 				array_push($statementArray, $genStartStatement);
 			}
 
