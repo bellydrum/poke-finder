@@ -1,7 +1,4 @@
 <?php
-
-	session_start();
-
 	// page setup
 
 	// custom functions are found in '../includes/helpers.php'
