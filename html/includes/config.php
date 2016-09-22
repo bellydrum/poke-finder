@@ -6,7 +6,7 @@
 	session_start();
 
         // if not logged in, redirect to login page
-	if($_SERVER['PHP_SELF'] != '/poke-finder/html/public/login.php')
+	if($_SERVER['PHP_SELF'] != ('/poke-finder/html/public/login.php' || '/poke-finder/html/public/register.php'))
 	{
 		if(!isset($_SESSION['username']))
                 	header('Location: login.php');
