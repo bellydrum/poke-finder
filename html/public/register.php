@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require('../includes/config.php');
 
 	render('header', ['title'=>"Get your own Pokedex!"]);

@@ -1,5 +1,11 @@
 <?php
+	session_start();
+
 	// page setup
+
+	// if not logged in, redirect to login page
+	if(!isset($_SESSION['username']))
+		header('Location: login.php');
 
 	// custom functions are found in '../includes/helpers.php'
 	// this is imported by config.php
@@ -60,15 +66,10 @@
 		//require('../views/explainer.php');
 
 		// pull all uncaught pokemon from user_pokemon table
-		$rows = $db->query("SELECT *
-				   FROM pokemon
-				   WHERE pokemon.name NOT IN (
-				   	SELECT pokemon
-					FROM user_pokemon
-					WHERE username = '{$_SESSION['username']}');");
+		$rows = $db->query("SELECT * FROM pokemon WHERE pokemon.name NOT IN (SELECT pokemon FROM user_pokemon);");
 	}
 
-
+	
 	// table generation
 
 	if(isset($rows))

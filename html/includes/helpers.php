@@ -54,7 +54,6 @@
 		return array($start, $end);
 	}
 
-
 	// creates sql statement from name text field form
 	function generateNameStatement($name)
 	{
@@ -64,11 +63,9 @@
 		// if input is not a number
 		if(!is_numeric($name))
 		{
-
 			// and it's not blank
 			if($name != '')
 				$statement = "SELECT * FROM pokemon WHERE name = '{$name}';";
-
 			// if input is blank
 			else
 				$statement = "SELECT * FROM pokemon ORDER BY nationalDex;";
@@ -78,9 +75,9 @@
 		{
 			$statement = "SELECT * FROM pokemon WHERE nationalDex = {$name};";
 		}
+
 		return $statement;
 	}
-
 
 	// creates SQL statements from user input
 	function generateStatement($caughtStatus, $type, $type2, $genStart, $genEnd)
@@ -103,9 +100,9 @@
 			if($caughtStatus != "")
 			{
 				if($caughtStatus == 'caught')
-					$caughtStatusStatement = "(pokemon.name IN (SELECT pokemon FROM user_pokemon WHERE username = '{$_SESSION['username']}'))";
+					$caughtStatusStatement = "(pokemon.name IN (SELECT pokemon FROM user_pokemon))";
 				else if($caughtStatus == 'uncaught')
-					$caughtStatusStatement = "(pokemon.name NOT IN (SELECT pokemon FROM user_pokemon WHERE username = '{$_SESSION['username']}'))";
+					$caughtStatusStatement = "(pokemon.name NOT IN (SELECT pokemon FROM user_pokemon))";
 
 				array_push($statementArray, $caughtStatusStatement);
 			}

@@ -1,0 +1,28 @@
+TODO:
+
+design
+
+- add collection page to see all the pokemon you've caught on one page
+- on login page, explain features of poke-finder
+	- step by step instructions
+		- this is for those who are bent on catching and collecting all pokemon
+		- enter the pokemon you catch as you catch them
+		- if there's a specific pokemon you want to find, run a search for it and click it to see where to catch it
+		- check your collection page to see all the pokemon you've caught
+- add side column with
+	- caught / uncaught count
+	- catch all onscreen
+	- clear all onscreen
+	- info
+	// all with ajax
+- create small name + description under pokemon logo accessible via click + ajax
+- create logout button
+- fix form divs expansion animation
+- make table row hover look prettier
+
+
+logic
+
+- fix database updating in /helpers/
+- make shown pokemon pull from pokemon where name not in user_pokemon
+- make clicking pokeball insert/delete from user_pokemon

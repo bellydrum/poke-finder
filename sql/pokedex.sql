@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 19, 2016 at 06:44 PM
+-- Generation Time: Sep 16, 2016 at 12:52 PM
 -- Server version: 5.7.13-0ubuntu0.16.04.2
 -- PHP Version: 7.0.8-0ubuntu0.16.04.2
 
@@ -875,8 +875,7 @@ ALTER TABLE `user_extra`
 -- Indexes for table `user_pokemon`
 --
 ALTER TABLE `user_pokemon`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `no_double_pokemon` (`username`,`pokemon`) USING BTREE;
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
