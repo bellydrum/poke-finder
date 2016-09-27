@@ -1,0 +1,6 @@
+{
+    "name": "root/poke-finder-heroku",
+    "require": {
+	"php":"^7.0.0"
+    }
+}
