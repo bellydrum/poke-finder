@@ -21,7 +21,7 @@
 	// the rest generates page data
 
 	// first create an array holding the names of all caught pokemon used while generating the table
-	$rows = $db->query("SELECT pokemon FROM user_pokemon WHERE username = '{$_SESSION['username']}';");
+	$rows = $db->query("SELECT * FROM user_pokemon WHERE username = '{$_SESSION['username']}';");
 	$caughtPokemon = array();
 	foreach($rows as $row)
 		array_push($caughtPokemon, $row['pokemon']);
@@ -55,6 +55,9 @@
 			// use $whereClause to create $selectStatement or $updateStatement
 			require('../includes/statements.php');
 		}
+
+		// FOR DEBUGGING
+		//print_r($selectStatement);
 
 		// store resulting data of generated statement in $rows
 		$rows = $db->query($selectStatement);

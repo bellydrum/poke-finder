@@ -49,7 +49,8 @@
 
 							echo "'>";
 							echo "<img src='../includes/images/pokeball.png' ";
-
+							
+							// $caughtPokemon is defined in index.php
 							if(in_array($row['name'], $caughtPokemon))
 								echo "class='opaquePokeball'";
 							else if(!in_array($row['name'], $caughtPokemon))

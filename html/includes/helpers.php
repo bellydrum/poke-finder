@@ -100,9 +100,9 @@
 			if($caughtStatus != "")
 			{
 				if($caughtStatus == 'caught')
-					$caughtStatusStatement = "(pokemon.name IN (SELECT pokemon FROM user_pokemon))";
+					$caughtStatusStatement = "(pokemon.name IN (SELECT pokemon FROM user_pokemon WHERE username = '{$_SESSION['username']}'))";
 				else if($caughtStatus == 'uncaught')
-					$caughtStatusStatement = "(pokemon.name NOT IN (SELECT pokemon FROM user_pokemon))";
+					$caughtStatusStatement = "(pokemon.name NOT IN (SELECT pokemon FROM user_pokemon WHERE username = '{$_SESSION['username']}'))";
 
 				array_push($statementArray, $caughtStatusStatement);
 			}
