@@ -24,6 +24,7 @@
 	$rows = $db->query("SELECT * FROM user_pokemon WHERE username = '{$_SESSION['username']}';");
 	$caughtPokemon = array();
 	foreach($rows as $row)
+		print_r($row['username'] . "  " . $row['pokemon']);
 		array_push($caughtPokemon, $row['pokemon']);
 
 	// if arriving at page via form submit $_POST method
@@ -62,7 +63,7 @@
 		// store resulting data of generated statement in $rows
 		$rows = $db->query($selectStatement);
 	}
-	// if arriving at page via url $_GET method	
+	// if arriving at page via url $_GET method
 	else if($_SERVER['REQUEST_METHOD'] == 'GET')
 	{
 		// insert text explaining table of uncaught pokemon
