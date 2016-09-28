@@ -21,15 +21,10 @@
 	// the rest generates page data
 
 	// first create an array holding the names of all caught pokemon used while generating the table
-	$statement = $db->prepare("SELECT * FROM user_pokemon WHERE username = :username;");
-	$statement->bindValue(':username', $_SESSION['username'], PDO::PARAM_STR);
+	$rows = $db->query("SELECT * FROM user_pokemon WHERE username = :username;");
 
-	$rows = $statement->execute();
+	// create array and push caught pokemon into it
 	$caughtPokemon = array();
-
-	
-
-	// this is the original part
 	foreach($rows as $row)
 		print_r($row['username'] . "  " . $row['pokemon']);
 		array_push($caughtPokemon, $row['pokemon']);
