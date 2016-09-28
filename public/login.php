@@ -16,7 +16,7 @@
 	render('pokemon_logo');
 
 	// if re-entering web page via login form with user's $_POST data
-	else if($_SERVER['REQUEST_METHOD'] == "POST")
+	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 
 		// store user info in variables
@@ -56,11 +56,12 @@
 	//render('about_div');
 	render('login_form');
 	render('register_request');
-	echo "gate 4";
+
+	//echo "gate 4";
 
 
 
 	// close html and add javascript
 	render('footer');
-	echo "gate 5";
+	//echo "gate 5";
 ?>
