@@ -8,8 +8,6 @@
 		$user = $url["user"];
 		$pass = $url["pass"];
 		$name = substr($url["path"], 1);
-
-		echo "using cleardb";
 	}
 	else
 	{
@@ -17,8 +15,6 @@
 		$user = 'b3llydrum';
 		$pass = 'password';
 		$name = 'pokedex';
-
-		echo "using mysql";
 	}
 
 	$db = new PDO('mysql:host=' . $host . ';dbname=' . $name, $user, $pass);

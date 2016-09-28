@@ -59,7 +59,7 @@
 		}
 
 		// FOR DEBUGGING
-		print_r($selectStatement);
+		//print_r($selectStatement);
 
 		// store resulting data of generated statement in $rows
 		$rows = $db->query($selectStatement);
