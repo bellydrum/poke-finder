@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	echo 'gate 1';
+
 	// page setup
 
 	// if not logged in, redirect to login page
@@ -21,14 +21,10 @@
 	// the rest generates page data
 
 	// first create an array holding the names of all caught pokemon used while generating the table
-	$rows = $db->query("SELECT * FROM user_pokemon WHERE username = :username;");
-
-	// create array and push caught pokemon into it
+	$rows = $db->query("SELECT * FROM user_pokemon WHERE username = '{$_SESSION['username']}';");
 	$caughtPokemon = array();
 	foreach($rows as $row)
-		print_r($row['username'] . "  " . $row['pokemon']);
 		array_push($caughtPokemon, $row['pokemon']);
-	}
 
 	// if arriving at page via form submit $_POST method
 	if($_SERVER['REQUEST_METHOD'] == 'POST')
@@ -66,7 +62,7 @@
 		// store resulting data of generated statement in $rows
 		$rows = $db->query($selectStatement);
 	}
-	// if arriving at page via url $_GET method
+	// if arriving at page via url $_GET method	
 	else if($_SERVER['REQUEST_METHOD'] == 'GET')
 	{
 		// insert text explaining table of uncaught pokemon
