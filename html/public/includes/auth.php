@@ -17,7 +17,7 @@
 		$name = 'pokedex';
 	}
 
-	$db = new PDO('mysql:host=localhost;dbname=pokedex', $user, $pass);
+	$db = new PDO('mysql:host=' . $host . ';dbname=' . $name, $user, $pass);
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	// for debugging
