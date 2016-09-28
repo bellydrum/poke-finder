@@ -51,6 +51,8 @@
 		}
 		else
 			print("<div id='warning'>Incorrect username.</div>");
+
+	echo "gate 666";
 	}
 
 	//render('about_div');
