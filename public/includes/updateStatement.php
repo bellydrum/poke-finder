@@ -9,16 +9,13 @@
 	require('auth.php');
 
 	// prepare and execute statement to pull the name of the pokemon the user caught
-	$statement = $db->prepare("SELECT *
-				FROM pokemon
-				WHERE name = :name;");
+	$statement = $db->prepare("SELECT * FROM pokemon WHERE name = :name;");
 	$statement->execute(array(':name' => $_POST['id']));
 
 	// retrieve information from the select statement and assign pokemon's name to variable
 	$rows = $statement->fetch(PDO::FETCH_ASSOC);
 	$username = $_SESSION['username'];
 	$pokemon = $rows['name'];
-	print_r($_POST['state']);
 
 	// prepare and execute statement based on whether user is catching or un-catching pokemon
 	if($_POST['state'] == 'opaquePokeball')
@@ -33,9 +30,7 @@
 	}
 	else if($_POST['state'] == 'fadedPokeball')
 	{
-		$statement = $db->prepare("DELETE FROM user_pokemon
-					  WHERE
-					  (username = :username AND pokemon = :pokemon);");
+		$statement = $db->prepare("DELETE FROM user_pokemon WHERE (username = :username AND pokemon = :pokemon);");
 		$statement->bindValue(':username', $username);
 		$statement->bindValue(':pokemon', $pokemon);
 		$statement->execute();
