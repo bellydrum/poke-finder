@@ -1,5 +1,5 @@
 <?php
-	$file = '../views/pokedex_form/type_list.txt';
+	$file = 'views/pokedex_form/type_list.txt';
 	$types = file($file, FILE_IGNORE_NEW_LINES);
 ?>
 
