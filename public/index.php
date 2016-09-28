@@ -24,7 +24,9 @@
 	$rows = $db->query("SELECT * FROM user_pokemon WHERE username = '{$_SESSION['username']}';");
 	$caughtPokemon = array();
 	foreach($rows as $row)
+	{
 		array_push($caughtPokemon, $row['pokemon']);
+	}
 
 	// if arriving at page via form submit $_POST method
 	if($_SERVER['REQUEST_METHOD'] == 'POST')

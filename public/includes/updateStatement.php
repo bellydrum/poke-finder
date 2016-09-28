@@ -6,23 +6,7 @@
 	session_start();
 
 	// define pdo object parameters
-	require('auth');
-
-	/*
-	$statement = $db->prepare("UPDATE pokemon
-				  SET caughtStatus = (CASE
-					WHEN
-						(caughtStatus = 'caught')
-					THEN
-						'uncaught'
-					WHEN
-						(caughtStatus = 'uncaught')
-					THEN
-						'caught'
-					END)
-				  WHERE nationalDex = (:nationalDex);"
-				 );
-	*/
+	require('auth.php');
 
 	// prepare and execute statement to pull the name of the pokemon the user caught
 	$statement = $db->prepare("SELECT *
