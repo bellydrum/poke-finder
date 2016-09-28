@@ -1,7 +1,10 @@
 <?php
+
+	echo "gate 1";
 	session_start();
 	require('includes/config.php');
 
+	echo "gate 2";
 	render('header', ['title'=>"Log in to your Pokedex"]);
 
 	// insert that badass pokemon logo we all know and love
