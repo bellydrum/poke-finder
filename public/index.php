@@ -21,18 +21,14 @@
 	// the rest generates page data
 
 	// first create an array holding the names of all caught pokemon used while generating the table
-	$rows = $db->query("SELECT * FROM user_pokemon WHERE username = '{$_SESSION['username']}';");
+	$statement = $db->prepare("SELECT * FROM user_pokemon WHERE username = :username;");
+	$statement->bindParam(':username', $_SESSION['username']);
+
+	$rows = $db->execute();
 	$caughtPokemon = array();
 
-	print(count($rows));
+	
 
-
-	if(!$rows)
-	{
-		print("Uh oh! Bitch!");
-	}
-	else
-	{
 		// this is the original part
 		foreach($rows as $row)
 			print_r($row['username'] . "  " . $row['pokemon']);
