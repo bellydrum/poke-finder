@@ -57,11 +57,11 @@
 	render('login_form');
 	render('register_request');
 
-	//echo "gate 4";
+	echo "gate 4";
 
 
 
 	// close html and add javascript
 	render('footer');
-	//echo "gate 5";
+	echo "gate 5";
 ?>
