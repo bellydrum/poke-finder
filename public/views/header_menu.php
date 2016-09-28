@@ -5,7 +5,7 @@
 		</div>
 	</a>
 
-	<a href='../public/logout.php' class='link'>
+	<a href='logout.php' class='link'>
 		<div id='logout-wrapper' class='header-button-wrapper'>
 			Log out
 		</div>
