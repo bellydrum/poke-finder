@@ -24,6 +24,8 @@
 	$rows = $db->query("SELECT * FROM user_pokemon WHERE username = '{$_SESSION['username']}';");
 	$caughtPokemon = array();
 
+	print(count($rows));
+
 
 	if(!$rows)
 	{
