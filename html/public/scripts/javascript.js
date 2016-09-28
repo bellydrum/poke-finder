@@ -17,7 +17,7 @@ $(document).ready(function() {
 		var state = $(this).children('img').attr('class');
 		$.ajax({
 			type:'POST',
-			url:'../includes/updateStatement.php',
+			url:'includes/updateStatement.php',
 			// if above fucks up, remove state:state
 			data:{id:name,state:state},
 			error: function(xhr, status, error) {

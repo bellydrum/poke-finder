@@ -9,7 +9,7 @@
 
 	// custom functions are found in '../includes/helpers.php'
 	// this is imported by config.php
-	require('../includes/config.php');
+	require('includes/config.php');
 
 	// render page
 	render('header', ['title'=>"Pokemon Finder"]);
@@ -53,7 +53,7 @@
 			$whereClause = generateStatement($caughtStatus, $type, $type2, $genStart, $genEnd);
 		
 			// use $whereClause to create $selectStatement or $updateStatement
-			require('../includes/statements.php');
+			require('includes/statements.php');
 		}
 
 		// FOR DEBUGGING
@@ -78,7 +78,7 @@
 	if(isset($rows))
 	{
 		// generate table using query results
-		require('../views/pokedex_table.php');
+		require('views/pokedex_table.php');
 	}
 
 

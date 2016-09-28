@@ -48,7 +48,7 @@
 							}
 
 							echo "'>";
-							echo "<img src='../includes/images/pokeball.png' ";
+							echo "<img src='includes/images/pokeball.png' ";
 							
 							// $caughtPokemon is defined in index.php
 							if(in_array($row['name'], $caughtPokemon))
@@ -78,17 +78,17 @@
 					<td class='nameCell'>
 						<a href='<?=$url;?>'>
 								<div><?= $row['name']?></div>
-								<div><img src='../includes/images/icons/pokemon/<?=$icon;?>'/></div>
+								<div><img src='includes/images/icons/pokemon/<?=$icon;?>'/></div>
 						</a>
 					</td>
 
 					<!-- display pokemon type -->
 					<td id='typeCell'>
-						<img src="../includes/images/icons/type/<?=strtolower($row['type'])?>.png"/>
+						<img src="includes/images/icons/type/<?=strtolower($row['type'])?>.png"/>
 					<?php
 						if($row['type2'] != 'NULL'):
 					?>
-							<img src="../includes/images/icons/type/<?=strtolower($row['type2']);?>.png"/>
+							<img src="includes/images/icons/type/<?=strtolower($row['type2']);?>.png"/>
 					<?php endif; ?>
 					</td>
 				</tr>

@@ -1,7 +1,7 @@
 
 /* here's the wallpaper */
 body {
-	background-image:url('../includes/images/wallpaper.png');
+	background-image:url('includes/images/wallpaper.png');
 	background-attachment:fixed;
 	text-align:center;
 }
