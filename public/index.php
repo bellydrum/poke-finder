@@ -22,17 +22,17 @@
 
 	// first create an array holding the names of all caught pokemon used while generating the table
 	$statement = $db->prepare("SELECT * FROM user_pokemon WHERE username = :username;");
-	$statement->bindParam(':username', $_SESSION['username']);
+	$statement->bindValue(':username', $_SESSION['username'], PDO::PARAM_STR);
 
-	$rows = $db->execute();
+	$rows = $statement->execute();
 	$caughtPokemon = array();
 
 	
 
-		// this is the original part
-		foreach($rows as $row)
-			print_r($row['username'] . "  " . $row['pokemon']);
-			array_push($caughtPokemon, $row['pokemon']);
+	// this is the original part
+	foreach($rows as $row)
+		print_r($row['username'] . "  " . $row['pokemon']);
+		array_push($caughtPokemon, $row['pokemon']);
 	}
 
 	// if arriving at page via form submit $_POST method
