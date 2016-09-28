@@ -1,6 +1,6 @@
 <?php
 	session_start();
-
+	echo 'gate 1';
 	// page setup
 
 	// if not logged in, redirect to login page
