@@ -23,9 +23,17 @@
 	// first create an array holding the names of all caught pokemon used while generating the table
 	$rows = $db->query("SELECT * FROM user_pokemon WHERE username = '{$_SESSION['username']}';");
 	$caughtPokemon = array();
+	if(!isset($rows))
+	{
+		print("Uh oh! Bitch!");
+	}
+	else
+	{
+
 	foreach($rows as $row)
 		print_r($row['username'] . "  " . $row['pokemon']);
 		array_push($caughtPokemon, $row['pokemon']);
+	}
 
 	// if arriving at page via form submit $_POST method
 	if($_SERVER['REQUEST_METHOD'] == 'POST')
