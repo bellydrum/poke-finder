@@ -1,16 +1,8 @@
 <?php
-
-	echo "gate 1";
-
-
 	session_start();
 	require('includes/config.php');
-	echo "gate 2";
-
 
 	render('header', ['title'=>"Log in to your Pokedex"]);
-	echo "gate 3";
-
 
 	// insert that badass pokemon logo we all know and love
 	render('pokemon_logo');
@@ -52,18 +44,12 @@
 		else
 			print("<div id='warning'>Incorrect username.</div>");
 
-	echo "gate 666";
 	}
 
 	//render('about_div');
 	render('login_form');
 	render('register_request');
 
-	echo "gate 4";
-
-
-
 	// close html and add javascript
 	render('footer');
-	echo "gate 5";
 ?>
