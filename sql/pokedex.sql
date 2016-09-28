@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 16, 2016 at 12:52 PM
+-- Generation Time: Sep 27, 2016 at 08:26 PM
 -- Server version: 5.7.13-0ubuntu0.16.04.2
 -- PHP Version: 7.0.8-0ubuntu0.16.04.2
 
@@ -804,6 +804,14 @@ CREATE TABLE `user` (
   `last_updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `date_created`, `last_updated`) VALUES
+(1, 'b3llydrum', '$2y$10$mPPDrH/Z2ZwvCvSCUVmwkue.cgK74Tc8Pvq80eeNkjn.rWtDYkjvq', '2016-09-22 17:35:49', '2016-09-22 17:35:49'),
+(2, 'tidbits', '$2y$10$iMA54NJDbnknTIh6kR1jG.nP61jwvb74fGBeWETta2w1vF5XO1Ayy', '2016-09-23 18:46:41', '2016-09-23 18:46:41');
+
 -- --------------------------------------------------------
 
 --
@@ -819,6 +827,14 @@ CREATE TABLE `user_extra` (
   `signature` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `user_extra`
+--
+
+INSERT INTO `user_extra` (`id`, `first_name`, `last_name`, `email`, `zip_code`, `signature`) VALUES
+(1, 'David', 'Maness', 'davidmaness1990@gmail.com', 63118, 'First!!1'),
+(2, 'joel', 'burton', 'joeltburton@gmail.com', NULL, 'yasss');
+
 -- --------------------------------------------------------
 
 --
@@ -830,6 +846,193 @@ CREATE TABLE `user_pokemon` (
   `username` varchar(255) NOT NULL,
   `pokemon` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_pokemon`
+--
+
+INSERT INTO `user_pokemon` (`id`, `username`, `pokemon`) VALUES
+(92, 'b3llydrum', 'Abomasnow'),
+(171, 'b3llydrum', 'Abra'),
+(98, 'b3llydrum', 'Aegislash'),
+(212, 'b3llydrum', 'Aerodactyl'),
+(175, 'b3llydrum', 'Alakazam'),
+(136, 'b3llydrum', 'Arbok'),
+(170, 'b3llydrum', 'Arcanine'),
+(239, 'b3llydrum', 'Ariados'),
+(100, 'b3llydrum', 'Aromatisse'),
+(214, 'b3llydrum', 'Articuno'),
+(222, 'b3llydrum', 'Bayleef'),
+(127, 'b3llydrum', 'Beedrill'),
+(177, 'b3llydrum', 'Bellsprout'),
+(119, 'b3llydrum', 'Blastoise'),
+(114, 'b3llydrum', 'Bulbasaur'),
+(124, 'b3llydrum', 'Butterfree'),
+(123, 'b3llydrum', 'Caterpie'),
+(61, 'b3llydrum', 'Chansey'),
+(117, 'b3llydrum', 'Charizard'),
+(115, 'b3llydrum', 'Charmander'),
+(118, 'b3llydrum', 'Charmeleon'),
+(223, 'b3llydrum', 'Chikorita'),
+(149, 'b3llydrum', 'Clefable'),
+(148, 'b3llydrum', 'Clefairy'),
+(193, 'b3llydrum', 'Cloyster'),
+(240, 'b3llydrum', 'Crobat'),
+(229, 'b3llydrum', 'Croconaw'),
+(202, 'b3llydrum', 'Cubone'),
+(225, 'b3llydrum', 'Cyndaquil'),
+(189, 'b3llydrum', 'Dewgong'),
+(161, 'b3llydrum', 'Diglett'),
+(72, 'b3llydrum', 'Ditto'),
+(46, 'b3llydrum', 'Dodrio'),
+(48, 'b3llydrum', 'Doduo'),
+(218, 'b3llydrum', 'Dragonair'),
+(219, 'b3llydrum', 'Dragonite'),
+(217, 'b3llydrum', 'Dratini'),
+(54, 'b3llydrum', 'Drowzee'),
+(90, 'b3llydrum', 'Ducklett'),
+(163, 'b3llydrum', 'Dugtrio'),
+(73, 'b3llydrum', 'Eevee'),
+(135, 'b3llydrum', 'Ekans'),
+(210, 'b3llydrum', 'Electabuzz'),
+(197, 'b3llydrum', 'Electrode'),
+(96, 'b3llydrum', 'Espurr'),
+(198, 'b3llydrum', 'Exeggcute'),
+(199, 'b3llydrum', 'Exeggutor'),
+(188, 'b3llydrum', 'Farfetchd'),
+(134, 'b3llydrum', 'Fearow'),
+(230, 'b3llydrum', 'Feraligatr'),
+(77, 'b3llydrum', 'Flareon'),
+(233, 'b3llydrum', 'Furret'),
+(85, 'b3llydrum', 'Gastly'),
+(50, 'b3llydrum', 'Gengar'),
+(87, 'b3llydrum', 'Geodude'),
+(156, 'b3llydrum', 'Gloom'),
+(154, 'b3llydrum', 'Golbat'),
+(65, 'b3llydrum', 'Goldeen'),
+(166, 'b3llydrum', 'Golduck'),
+(181, 'b3llydrum', 'Golem'),
+(86, 'b3llydrum', 'Graveler'),
+(190, 'b3llydrum', 'Grimer'),
+(169, 'b3llydrum', 'Growlithe'),
+(69, 'b3llydrum', 'Gyarados'),
+(84, 'b3llydrum', 'Haunter'),
+(59, 'b3llydrum', 'Hitmonchan'),
+(82, 'b3llydrum', 'Hitmonlee'),
+(235, 'b3llydrum', 'Hoothoot'),
+(66, 'b3llydrum', 'Horsea'),
+(51, 'b3llydrum', 'Hypno'),
+(112, 'b3llydrum', 'Ivysaur'),
+(42, 'b3llydrum', 'Jigglypuff'),
+(81, 'b3llydrum', 'Jolteon'),
+(208, 'b3llydrum', 'Jynx'),
+(78, 'b3llydrum', 'Kabuto'),
+(79, 'b3llydrum', 'Kabutops'),
+(172, 'b3llydrum', 'Kadabra'),
+(126, 'b3llydrum', 'Kakuna'),
+(203, 'b3llydrum', 'Kangaskhan'),
+(195, 'b3llydrum', 'Kingler'),
+(57, 'b3llydrum', 'Koffing'),
+(194, 'b3llydrum', 'Krabby'),
+(71, 'b3llydrum', 'Lapras'),
+(237, 'b3llydrum', 'Ledian'),
+(236, 'b3llydrum', 'Ledyba'),
+(58, 'b3llydrum', 'Lickitung'),
+(174, 'b3llydrum', 'Machamp'),
+(176, 'b3llydrum', 'Machoke'),
+(67, 'b3llydrum', 'Magikarp'),
+(209, 'b3llydrum', 'Magmar'),
+(187, 'b3llydrum', 'Magnemite'),
+(49, 'b3llydrum', 'Magneton'),
+(167, 'b3llydrum', 'Mankey'),
+(83, 'b3llydrum', 'Marowak'),
+(224, 'b3llydrum', 'Meganium'),
+(97, 'b3llydrum', 'Meowstic'),
+(162, 'b3llydrum', 'Meowth'),
+(41, 'b3llydrum', 'Metapod'),
+(221, 'b3llydrum', 'Mew'),
+(220, 'b3llydrum', 'Mewtwo'),
+(216, 'b3llydrum', 'Moltres'),
+(205, 'b3llydrum', 'Mr. Mime'),
+(191, 'b3llydrum', 'Muk'),
+(95, 'b3llydrum', 'Munchlax'),
+(147, 'b3llydrum', 'Nidoking'),
+(145, 'b3llydrum', 'Nidoqueen'),
+(141, 'b3llydrum', 'Nidoran'),
+(143, 'b3llydrum', 'Nidorina'),
+(146, 'b3llydrum', 'Nidorino'),
+(151, 'b3llydrum', 'Ninetales'),
+(234, 'b3llydrum', 'Noctowl'),
+(155, 'b3llydrum', 'Oddish'),
+(75, 'b3llydrum', 'Omanyte'),
+(74, 'b3llydrum', 'Omastar'),
+(53, 'b3llydrum', 'Onix'),
+(157, 'b3llydrum', 'Paras'),
+(158, 'b3llydrum', 'Parasect'),
+(164, 'b3llydrum', 'Persian'),
+(130, 'b3llydrum', 'Pidgeot'),
+(129, 'b3llydrum', 'Pidgeotto'),
+(128, 'b3llydrum', 'Pidgey'),
+(137, 'b3llydrum', 'Pikachu'),
+(211, 'b3llydrum', 'Pinsir'),
+(45, 'b3llydrum', 'Poliwag'),
+(43, 'b3llydrum', 'Poliwhirl'),
+(44, 'b3llydrum', 'Poliwrath'),
+(183, 'b3llydrum', 'Ponyta'),
+(76, 'b3llydrum', 'Porygon'),
+(168, 'b3llydrum', 'Primeape'),
+(165, 'b3llydrum', 'Psyduck'),
+(226, 'b3llydrum', 'Quilava'),
+(138, 'b3llydrum', 'Raichu'),
+(184, 'b3llydrum', 'Rapidash'),
+(132, 'b3llydrum', 'Raticate'),
+(131, 'b3llydrum', 'Rattata'),
+(91, 'b3llydrum', 'Reuniclus'),
+(60, 'b3llydrum', 'Rhydon'),
+(56, 'b3llydrum', 'Rhyhorn'),
+(94, 'b3llydrum', 'Riolu'),
+(139, 'b3llydrum', 'Sandshrew'),
+(142, 'b3llydrum', 'Sandslash'),
+(206, 'b3llydrum', 'Scyther'),
+(64, 'b3llydrum', 'Seadra'),
+(63, 'b3llydrum', 'Seaking'),
+(47, 'b3llydrum', 'Seel'),
+(232, 'b3llydrum', 'Sentret'),
+(192, 'b3llydrum', 'Shellder'),
+(186, 'b3llydrum', 'Slowbro'),
+(185, 'b3llydrum', 'Slowpoke'),
+(213, 'b3llydrum', 'Snorlax'),
+(93, 'b3llydrum', 'Snover'),
+(133, 'b3llydrum', 'Spearow'),
+(238, 'b3llydrum', 'Spinarak'),
+(99, 'b3llydrum', 'Spritzee'),
+(121, 'b3llydrum', 'Squirtle'),
+(204, 'b3llydrum', 'Starmie'),
+(62, 'b3llydrum', 'Staryu'),
+(89, 'b3llydrum', 'Swanna'),
+(201, 'b3llydrum', 'Tangela'),
+(68, 'b3llydrum', 'Tauros'),
+(182, 'b3llydrum', 'Tentacool'),
+(88, 'b3llydrum', 'Tentacruel'),
+(227, 'b3llydrum', 'Totodile'),
+(228, 'b3llydrum', 'Typhlosion'),
+(80, 'b3llydrum', 'Vaporeon'),
+(160, 'b3llydrum', 'Venomoth'),
+(159, 'b3llydrum', 'Venonat'),
+(113, 'b3llydrum', 'Venusaur'),
+(179, 'b3llydrum', 'Victreebel'),
+(196, 'b3llydrum', 'Voltorb'),
+(150, 'b3llydrum', 'Vulpix'),
+(122, 'b3llydrum', 'Wartortle'),
+(125, 'b3llydrum', 'Weedle'),
+(178, 'b3llydrum', 'Weepinbell'),
+(55, 'b3llydrum', 'Weezing'),
+(152, 'b3llydrum', 'Wigglytuff'),
+(215, 'b3llydrum', 'Zapdos'),
+(153, 'b3llydrum', 'Zubat'),
+(12, 'tidbits', 'Machop'),
+(13, 'tidbits', 'Tyrantrum'),
+(10, 'tidbits', 'Vileplume');
 
 --
 -- Indexes for dumped tables
@@ -875,7 +1078,8 @@ ALTER TABLE `user_extra`
 -- Indexes for table `user_pokemon`
 --
 ALTER TABLE `user_pokemon`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `no_double_pokemon` (`username`,`pokemon`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -900,17 +1104,17 @@ ALTER TABLE `pokemon_locations`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user_extra`
 --
 ALTER TABLE `user_extra`
-  MODIFY `id` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user_pokemon`
 --
 ALTER TABLE `user_pokemon`
-  MODIFY `id` bigint(255) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
 --
 -- Constraints for dumped tables
 --

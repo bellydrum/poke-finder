@@ -13,7 +13,7 @@
 	{
 		$host = 'localhost';
 		$user = 'b3llydrum';
-		$pass = 'Bittie90';
+		$pass = 'password';
 		$name = 'pokedex';
 	}
 
