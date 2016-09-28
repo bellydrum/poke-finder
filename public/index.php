@@ -69,7 +69,7 @@
 		//require('../views/explainer.php');
 
 		// pull all uncaught pokemon from user_pokemon table
-		$rows = $db->query("SELECT * FROM pokemon WHERE pokemon.name NOT IN (SELECT pokemon FROM user_pokemon);");
+		$rows = $db->query("SELECT * FROM pokemon WHERE pokemon.name NOT IN (SELECT pokemon FROM user_pokemon WHERE username = '{$_SESSION['username']}');");
 	}
 
 	
