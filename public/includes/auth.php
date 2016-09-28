@@ -27,5 +27,4 @@
 	// for debugging
 	// echo 'Connected successfully!';
 
-
 ?>
