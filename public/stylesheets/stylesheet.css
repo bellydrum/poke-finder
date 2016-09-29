@@ -1,4 +1,37 @@
 
+
+.wireframe-1 {
+	border:1px solid black;
+}
+
+.wireframe-2 {
+	border:1px dotted red;
+}
+
+.wireframe-3 {
+	border:1px dotted blue;
+}
+
+#about {
+	text-align:left;
+}
+
+#about-2 {
+	margin-top:20px;
+	font-size:1.5em;
+}
+
+
+#about-table {
+	margin-top:20px;
+	width:100%;
+}
+
+
+
+
+
+
 /* here's the wallpaper */
 body {
 	background-image:url('../includes/images/wallpaper.png');
