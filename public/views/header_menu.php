@@ -1,7 +1,7 @@
 <div id='header-menu-wrapper'>
-	<a href='collection.php' class='link'>
+	<a href='about.php' class='link'>
 		<div id='collection-wrapper' class='header-button-wrapper'>
-			<?=ucfirst($_SESSION['username']);?>'s Collection
+			What is this?
 		</div>
 	</a>
 
