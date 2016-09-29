@@ -46,7 +46,8 @@
 
 	}
 
-	//render('about_div');
+	render('aboutButton');
+	echo "<div id='about-expand-container'></div>";
 	render('login_form');
 	render('register_request');
 

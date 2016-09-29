@@ -27,6 +27,19 @@ $(document).ready(function() {
 			}
 		});
 	});
+
+	/* when clicking the about button on the login page, toggle the about div */
+	$('#about-expand-button').click(function() {
+		// ajax call for render of about-expanse div
+		if(!($('#about-expand-container').hasClass('expanded'))) {
+			$('#about-expand-container').addClass('expanded');
+			$('#about-expand-container').load('views/aboutExpand.php');
+		}
+		else {
+			$('#about-expand-container').removeClass('expanded');
+			$('#about-expand').remove();
+		}
+	});
 });
 
 
@@ -40,12 +53,12 @@ $(document).ready(function() {
 
 /* makes hovering over buttons look cool */
 $(document).ready(function() {
-        $('.button').mouseenter(function() {
+        $('.submit').mouseenter(function() {
                 $(this).animate({
 			'background-color':'#ffff99'
 			}, 75);
         });
-        $('.button').mouseleave(function() {
+        $('.submit').mouseleave(function() {
                 $(this).animate({
 			'background-color':'silver'
 			}, 75);

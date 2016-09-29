@@ -1,4 +1,4 @@
-<select id='select-box' class='button' name='generation'>
+<select id='select-box' name='generation'>
 	<option value="">Generation</option>
 	<option value=""></option>
 	<?php

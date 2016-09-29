@@ -1,4 +1,4 @@
-<select id='select-box' class='button' name='caughtStatus'>
+<select class='select-box' name='caughtStatus'>
 	<option value="">Caught / Uncaught</option>
 	<option value=""></option>
 	<option value="">All</option>

@@ -25,7 +25,7 @@
 			<input name='signature' type='text' placeholder='Forum signature (optional)' class='input-bar'/>
 		</div>
 		<div class='login-input-div'>
-			<input type='submit' value='Create my Pokedex!' id='submit' class='button'/>
+			<input type='submit' value='Create my Pokedex!' class='submit'/>
 		</div>
 	</form>
 </div>

@@ -3,7 +3,7 @@
 	$types = file($file, FILE_IGNORE_NEW_LINES);
 ?>
 
-<select id='select-box' class='button' name='type2'>
+<select id='select-box' name='type2'>
 
 	<option value="">Secondary type</option>
 	<option value=""></option>

@@ -7,7 +7,7 @@
 			<input type='password' name='password' placeholder='Password' class='input-bar'/>
 		</div>
 		<div id='login-submit-div' class='login-input-div'>
-			<input type='submit' value='Submit' id='submit' class='button'/>
+			<input type='submit' value='Submit' class='submit'/>
 		</div>
 	</form>
 </div>

@@ -1,4 +1,4 @@
-<select id='select-box' class='button' name='region'>
+<select id='select-box' name='region'>
 	<option value="">Region</option>
 	<option value=""></option>
 	<option value="Kanto">Kanto</option>

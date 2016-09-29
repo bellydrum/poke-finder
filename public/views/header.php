@@ -11,4 +11,4 @@
 	</head>
 	<body>
 		<div id='body-div'>
-			v0.8.0
+			v0.8.1 (added about page)

@@ -42,8 +42,32 @@ body {
 
 
 /*
-						login page
+						log in
 */
+
+
+#about-expand-button {
+	border:1px solid #696969;
+	background-color:rgb(192, 192, 192);
+	width:20%;
+}
+
+#about-expand-container {
+	width:100%;
+}
+
+#about-expand {
+	border:1px solid #696969;
+	width:100%;
+	margin-top:30px;
+	margin-bottom:25px;
+	padding:20px;
+	background-color:rgb(255, 255, 153);
+	border-radius:8px;
+}
+
+
+
 
 #login-form-wrapper {
 	
@@ -78,7 +102,7 @@ body {
 
 
 /*
-					register
+						register
 */
 
 #register-form-wrapper {
@@ -92,7 +116,7 @@ body {
 
 
 /*
-					about
+						about
 */
 
 
@@ -417,7 +441,7 @@ select {
 	text-align:center;
 }
 select:hover {
-	background-color:#ffffdd;
+	background-color:rgb(255, 255, 153);
 
 }
 
@@ -452,14 +476,13 @@ select[name='generation'] {
 
 
 /* submit button */
-#submit {
+.submit {
 	border:1px #696969 solid;
 	border-radius:0px;
 	padding:10px;
 	margin:0 auto;
 	background-color:silver;
 	width:40%;
-
 }
 
 
