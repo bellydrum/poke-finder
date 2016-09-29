@@ -1,3 +1,3 @@
-<div id='about-expand-button' class='submit'>
+<button id='about-expand-button' class='submit button'>
 	About
-</div>
+</button>
