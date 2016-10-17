@@ -1,0 +1,87 @@
+future features for poke-finder
+
+
+
+
+
+'Catch all on page' button
+
+	- two buttons:
+		- 'catch all on page' pokeball that is toggled between translucent and opaque
+		- 'undo' button that reverts 'catch all' / 'release all' to previous state
+		- as soon as 'catch all on page' pokeball is selected, if flag is set to 0, poke-finder stores caught pokemon for 'undo' button before catching / releasing all of them -- once. Refreshing the page flushes this cache and resets the flag
+		- 
+
+	- generate one sql query into which php implants all the names of the pokemon on the page
+	- clicking the button does the following:
+		- push current state of pokemon in user_pokemon WHERE (username = $_SESSION['username']) to list for 'undo' option
+		- if button is faded, clicking does:
+			- place all pokemon on page into user_pokemon WHERE (username = $_SESSION['username']);
+			- make button opaque
+		- if button is opaque, clicking does:
+			- delete all pokemon on page from user_pokemon WHERE (username = $_SESSION['username']);
+			- make button undo symbol
+		- animate button
+		- collect all the names on the page into list		
+		- for each item in the list that's not the last one,
+			- implant item into sql query + ' OR '
+		- else
+			- implant item into sql query
+		- ajax call code that does the above generation
+		- ajax call the actual query
+
+
+
+
+two pokeball toggles instead of one
+
+
+Caught	 Natl    Dex      Name
+___________________________________
+|      |       |       | Bulbasaur |
+|  0   |   0   |   1   |           |
+|      |       |       |   -0-     |
+___________________________________|
+
+
+
+	- this would mean an extra column in a table
+	- and an extra search parameter
+	- and changing the criteria for php table generation
+
+
+
+
+
+add search by regional dex
+
+	Generation
+	1
+	2
+	3
+	4
+	5
+	6
+	7
+	------
+	Kanto
+	Johto
+	Hoenn
+	Sinnoh
+	Unova
+	Kalos
+	Alola
+
+
+
+	- new table for each region (easy)
+
+
+
+
+
+
+
+
+
+
